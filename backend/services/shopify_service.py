@@ -1,8 +1,10 @@
 import os
 import httpx
 from dotenv import load_dotenv
-from backend.utils.logger import logger  # optional custom logger
-
+from sqlalchemy.orm import Session
+from backend.db.models import Product
+from backend.utils.logger import logger  # optional
+from typing import List, Dict
 load_dotenv()
 
 SHOPIFY_STORE = os.getenv("SHOPIFY_STORE_URL")  # e.g. mystore.myshopify.com
@@ -25,7 +27,6 @@ class ShopifyService:
         }
 
     async def get_products(self, limit: int = 10):
-        """Fetch products from Shopify store"""
         url = f"{self.base_url}/products.json?limit={limit}"
         async with httpx.AsyncClient() as client:
             resp = await client.get(url, headers=self.headers)
@@ -35,17 +36,13 @@ class ShopifyService:
             return products
 
     async def get_product(self, product_id: str):
-        """Fetch a single product from Shopify by ID"""
         url = f"{self.base_url}/products/{product_id}.json"
         async with httpx.AsyncClient() as client:
             resp = await client.get(url, headers=self.headers)
             resp.raise_for_status()
-            product = resp.json().get("product")
-            logger.info(f"Fetched product {product_id} from Shopify")
-            return product
+            return resp.json().get("product")
 
     async def create_product(self, product_data: dict):
-        """Create a new product in Shopify"""
         url = f"{self.base_url}/products.json"
         async with httpx.AsyncClient() as client:
             resp = await client.post(url, headers=self.headers, json={"product": product_data})
@@ -55,20 +52,43 @@ class ShopifyService:
             return product
 
     async def update_product(self, product_id: str, product_data: dict):
-        """Update an existing product"""
         url = f"{self.base_url}/products/{product_id}.json"
         async with httpx.AsyncClient() as client:
             resp = await client.put(url, headers=self.headers, json={"product": product_data})
             resp.raise_for_status()
-            product = resp.json().get("product")
-            logger.info(f"Updated product {product_id} in Shopify")
-            return product
+            return resp.json().get("product")
 
     async def delete_product(self, product_id: str):
-        """Delete a product from Shopify"""
         url = f"{self.base_url}/products/{product_id}.json"
         async with httpx.AsyncClient() as client:
             resp = await client.delete(url, headers=self.headers)
             resp.raise_for_status()
             logger.info(f"Deleted product {product_id} from Shopify")
             return {"deleted": product_id}
+
+    @staticmethod
+    def save_products_to_db(db: Session, shopify_products: List[Dict]):
+        """Save Shopify products to the database. Avoids duplicates using shopify_id."""
+        for sp in shopify_products:
+            shopify_id = str(sp["id"])
+            existing = db.query(Product).filter_by(shopify_id=shopify_id).first()
+            if existing:
+                continue
+
+            variants = sp.get("variants", [])
+            price, sku = 0, None
+            if variants:
+                price = int(float(variants[0].get("price") or 0))
+                sku = variants[0].get("sku")
+
+            product = Product(
+                title=sp.get("title"),
+                description=sp.get("body_html"),
+                price=price,
+                sku=sku,
+                tags=sp.get("tags"),
+                shopify_id=shopify_id,
+            )
+            db.add(product)
+
+        db.commit()
