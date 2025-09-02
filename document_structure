@@ -1,0 +1,47 @@
+catalog/
+│── .venv/                   # Python virtual environment
+│── .env                     # Environment variables (API keys, DB URL, etc.)
+│── requirements.txt          # Python dependencies
+│── README.md
+│
+├── catalog_agent/            # ADK Agent (AI logic)
+│   ├── __init__.py
+│   ├── agent.py              # root_agent, ADK agent config
+│   ├── tools/                # Tools the agent can call
+│   │   ├── __init__.py
+│   │   ├── shopify_tools.py  # Functions to interact with Shopify
+│   │   └── db_tools.py       # Functions to query/update DB
+│   └── prompts/              # Prompt templates for the agent
+│       └── optimizer_prompt.txt
+│
+├── backend/                  # FastAPI backend
+│   ├── main.py               # FastAPI entry point
+│   ├── api/                  # Routes
+│   │   ├── __init__.py
+│   │   ├── products.py       # Product CRUD API
+│   │   └── auth.py           # Auth endpoints (if needed)
+│   ├── services/             # Business logic
+│   │   ├── __init__.py
+│   │   ├── shopify_service.py # Shopify API wrapper
+│   │   └── product_service.py # Internal product logic
+│   ├── db/                   # Database models & migrations
+│   │   ├── __init__.py
+│   │   ├── models.py         # SQLAlchemy models
+│   │   ├── schemas.py        # Pydantic schemas
+│   │   └── migrations/       # Alembic migrations
+│   └── utils/                # Helpers
+│       └── logger.py
+│
+└── frontend/                 # React app (UI for Catalog Manager)
+    ├── package.json
+    ├── src/
+    │   ├── pages/
+    │   │   ├── ProductsPage.jsx
+    │   │   └── UploadPage.jsx
+    │   ├── components/
+    │   │   ├── ProductCard.jsx
+    │   │   └── Navbar.jsx
+    │   ├── store/            # Zustand / Redux store
+    │   └── api/              # API calls to FastAPI backend
+    └── public/
+

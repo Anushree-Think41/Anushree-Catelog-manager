@@ -1,0 +1,25 @@
+# FastAPI framework
+fastapi
+
+# ASGI server
+uvicorn[standard]
+
+# Database + ORM
+sqlalchemy
+alembic
+psycopg2-binary
+
+# Pydantic (validation/schemas)
+pydantic
+
+# HTTP client (for Shopify API calls)
+httpx
+
+# Environment variables
+python-dotenv
+
+# Logging utils
+loguru
+fastmcp
+google-adk
+google-genai
