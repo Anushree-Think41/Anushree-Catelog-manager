@@ -1,47 +1,53 @@
-from fastapi import APIRouter, HTTPException
-from catalog_agent.product_optimizer_agent import product_optimizer_agent
-from backend.services.product_service import get_product_by_id, update_product
+# backend/api/optimize.py
+from fastapi import APIRouter, HTTPException, Depends, BackgroundTasks
+from sqlalchemy.orm import Session
+from backend.db.database import get_db
+from backend.db.models import Product
+from backend.services.product_service import get_product_by_shopify_id, create_optimized_product
+import asyncio
+from catalog_agent.product_optimizer_agent import optimize_product
+from catalog_agent.all_products_optimizer_agent import optimize_all_products
 import json
+router = APIRouter()
 
-router = APIRouter(prefix="/optimize", tags=["optimizer"])
-
-
-@router.post("/{product_id}")
-async def optimize_product(product_id: int):
+@router.post("/shopify/{shopify_id}")
+async def optimize_product_endpoint(shopify_id: str, db: Session = Depends(get_db)):
     # 1. Fetch product from DB
-    product = await get_product_by_id(product_id)
+    product = get_product_by_shopify_id(db, shopify_id)
     if not product:
         raise HTTPException(status_code=404, detail="Product not found")
 
-    # 2. Build structured prompt
-    prompt = f"""
-    Optimize this product for SEO and engagement.
-    Return JSON only, with keys: suggested_title, suggested_description, seo_keywords.
+    # 2. Prepare product input
+    product_input = {
+        "title": product.title,
+        "description": product.description,
+        "tags": product.tags
+    }
 
-    Product Input:
-    Title: {product.title}
-    Description: {product.description}
-    Tags: {product.tags}
-    """
-
-    # 3. Call LLM agent
+    # 3. Call agent to optimize product
     try:
-        response = await product_optimizer_agent.chat(prompt)
-        raw_output = response.output_text.strip()
+        optimized_data = await optimize_product(product_input)
+        if "error" in optimized_data:
+            # Handle cases where the agent output is not valid JSON
+            raise HTTPException(status_code=500, detail=f"Agent error: {optimized_data['error']}. Raw output: {optimized_data.get('raw_output')}")
+
     except Exception as e:
+        # Handle other exceptions during agent execution
         raise HTTPException(status_code=500, detail=f"Agent error: {str(e)}")
 
-    # 4. Parse agent response as JSON
-    try:
-        optimized_data = json.loads(raw_output)
-    except json.JSONDecodeError:
-        raise HTTPException(status_code=500, detail="Agent did not return valid JSON")
-
-    # 5. Update product in DB
-    updated_product = await update_product(product_id, optimized_data)
+    # 4. Create optimized product in DB
+    optimized_product_entry = create_optimized_product(db, product, optimized_data)
 
     return {
         "original": product,
-        "optimized": updated_product,
-        "raw_output": raw_output  # keep for debugging
+        "optimized": optimized_product_entry,
+        "raw_output": optimized_data
     }
+
+@router.post("/all-products")
+async def optimize_all_products_endpoint(background_tasks: BackgroundTasks):
+    """
+    Triggers the optimization of all Shopify products in the background.
+    """
+    background_tasks.add_task(optimize_all_products)
+    return {"message": "Product optimization started in the background."}

@@ -10,9 +10,8 @@ app.include_router(products.router, prefix="/products", tags=["Products"])
 app.include_router(auth.router, prefix="/auth", tags=["Auth"])
 app.include_router(optimize.router, prefix="/optimize", tags=["Optimize"])
 app.include_router(shopify_sync.router, prefix="/shopify", tags=["Shopify"])
-
 # Mount MCP server under /mcp
-app.mount("/mcp", mcp_app)
+app.mount("/mcp/", mcp_app)
 
 @app.get("/")
 def root():

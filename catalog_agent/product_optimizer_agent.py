@@ -1,46 +1,64 @@
-from google.adk.agents import LlmAgent
-from .agent import shopify_toolset
+import json
+from pathlib import Path
+import asyncio
+import uuid
+from pydantic import BaseModel
+import google.generativeai as genai
+import os
 
-# System prompt for product optimization
-OPTIMIZER_PROMPT = """You are an expert e-commerce merchandiser and SEO specialist.
+# Define the input schema for the product
+class ProductInput(BaseModel):
+    title: str
+    description: str
+    tags: str
 
-Your task is to analyze product information and generate optimized content to increase sales and search visibility.
+# Load prompt
+PROMPT_PATH = Path(__file__).parent / "prompts/optimizer_prompt.txt"
+with open(PROMPT_PATH, "r") as f:
+    OPTIMIZER_PROMPT = f.read()
 
-Given a product's details (title, description, vendor, etc.), you must generate:
-1.  **suggested_title**: A compelling and keyword-rich title, under 60 characters.
-2.  **suggested_description**: A persuasive and informative product description that highlights key features and benefits.
-3.  **seo_keywords**: A list of 5-10 relevant SEO keywords.
-
-You must return the output in a structured JSON format. Do not include any other text or explanations in your response.
-
-Example Input:
-{
-    "title": "Basic T-Shirt",
-    "description": "A plain cotton t-shirt.",
-    "vendor": "Generic Apparel"
-}
-
-Example Output:
-```json
-{
-    "suggested_title": "Men's Premium Cotton T-Shirt - Ultra-Soft & Breathable",
-    "suggested_description": "Experience ultimate comfort with our Men's Premium Cotton T-Shirt. Made from 100% ultra-soft, breathable cotton, this shirt is perfect for everyday wear. Featuring a classic crew neck and a modern fit, it's a versatile staple for any wardrobe. Available in multiple colors.",
-    "seo_keywords": ["men's t-shirt", "cotton shirt", "premium t-shirt", "casual wear", "men's apparel", "soft t-shirt"]
-}
-"""
-
-# Create the optimization agent
-product_optimizer_agent = LlmAgent(
-    name="product_optimizer_agent",
-    model="gemini-1.5-flash",
-    tools=[shopify_toolset],
-)
-
-# Utility function to run optimization
-def optimize_product(product: dict) -> str:
+async def optimize_product(product: dict) -> dict:
     """
-    Sends product details to the optimizer agent with the structured SEO prompt.
+    Optimizes product using Gemini API directly.
     """
-    user_input = f"{OPTIMIZER_PROMPT}\n\nProduct Input:\n{product}"
-    response = product_optimizer_agent.chat(user_input)
-    return response.output_text
+    API_KEY = os.getenv("GOOGLE_API_KEY")
+    if not API_KEY:
+        return {"error": "GOOGLE_API_KEY environment variable not set."}
+
+    genai.configure(api_key=API_KEY)
+
+    try:
+        model = genai.GenerativeModel('gemini-1.5-flash-latest')
+        
+        # Construct the prompt with product details
+        full_prompt = f"{OPTIMIZER_PROMPT}\n\nProduct: {json.dumps(product)}"
+
+        retries = 5
+        delay = 10  # seconds
+
+        for i in range(retries):
+            try:
+                response = await model.generate_content_async(full_prompt)
+                if response.text:
+                    output_text = response.text.strip()
+
+                    # Strip ```json``` wrappers if present
+                    if output_text.startswith("```"):
+                        output_text = output_text.split("```json")[-1].split("```")[0].strip()
+
+                    try:
+                        return json.loads(output_text)
+                    except json.JSONDecodeError:
+                        return {"error": "Failed to parse JSON", "raw_output": output_text}
+                else:
+                    return {"error": "Gemini API returned no text response."}
+            except Exception as e:
+                if "ResourceExhausted" in str(e) and i < retries - 1:
+                    print(f"Rate limit hit. Retrying in {delay} seconds...")
+                    await asyncio.sleep(delay)
+                    delay *= 2  # Exponential backoff
+                else:
+                    return {"error": f"Error optimizing product with Gemini API: {e}"}
+
+    except Exception as e:
+        return {"error": f"Error optimizing product with Gemini API: {e}"}
