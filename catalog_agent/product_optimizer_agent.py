@@ -21,9 +21,9 @@ async def optimize_product(product: dict) -> dict:
     """
     Optimizes product using Gemini API directly.
     """
-    API_KEY = os.getenv("GOOGLE_API_KEY")
+    API_KEY = os.getenv("GEMINI_API_KEY")
     if not API_KEY:
-        return {"error": "GOOGLE_API_KEY environment variable not set."}
+        return {"error": "GEMINI_API_KEY environment variable not set."}
 
     genai.configure(api_key=API_KEY)
 
