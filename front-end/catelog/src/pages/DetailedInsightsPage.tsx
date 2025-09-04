@@ -45,7 +45,7 @@ interface ProductDetailsResponse {
   optimized_product: ProductDetails;
 }
 
-const ProductComparisonPage: React.FC = () => {
+const DetailedInsightsPage: React.FC = () => {
   const { optimizedProductId } = useParams<{ optimizedProductId: string }>();
   const [comparisonData, setComparisonData] = useState<ProductComparisonResponse | null>(null);
   const [productDetails, setProductDetails] = useState<ProductDetailsResponse | null>(null);
@@ -76,7 +76,7 @@ const ProductComparisonPage: React.FC = () => {
   }, [optimizedProductId]);
 
   if (loading) {
-    return <div className="flex h-screen items-center justify-center">Loading...</div>;
+    return <div className="flex h-screen items-center justify-center">Loading detailed insights...</div>;
   }
 
   if (error) {
@@ -84,7 +84,7 @@ const ProductComparisonPage: React.FC = () => {
   }
 
   if (!comparisonData || !productDetails) {
-    return <div className="flex h-screen items-center justify-center">No data found.</div>;
+    return <div className="flex h-screen items-center justify-center">No detailed insights found.</div>;
   }
 
   const { comparison, overall_score, conclusion } = comparisonData.comparison;
@@ -104,86 +104,88 @@ const ProductComparisonPage: React.FC = () => {
   const COLORS = ['#FF8042', '#0088FE'];
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md text-xs">
-      <h2 className="text-xl font-bold mb-2">Product Comparison for Optimized Product ID: {optimizedProductId}</h2>
+    <div className="bg-white p-6 rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold mb-4">Detailed Product Insights for Optimized Product ID: {optimizedProductId}</h2>
 
-      <div className="grid grid-cols-2 gap-4 mb-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div>
-          <h3 className="text-lg font-semibold mb-2">Original Product</h3>
-          <div className="border p-2 rounded-md">
-            <p><strong>Title:</strong> {original_product.title}</p>
-            <p><strong>Description:</strong> {original_product.description}</p>
-            <p><strong>Price:</strong> ${original_product.price}</p>
-            <p><strong>SKU:</strong> {original_product.sku}</p>
+          <h3 className="text-xl font-semibold mb-3">Original Product Details</h3>
+          <div className="border p-4 rounded-lg bg-gray-50">
+            <p className="mb-1"><strong>Title:</strong> {original_product.title}</p>
+            <p className="mb-1"><strong>Description:</strong> {original_product.description}</p>
+            <p className="mb-1"><strong>Price:</strong> ${original_product.price}</p>
+            <p className="mb-1"><strong>SKU:</strong> {original_product.sku}</p>
             <p><strong>Tags:</strong> {original_product.tags}</p>
           </div>
         </div>
         <div>
-          <h3 className="text-lg font-semibold mb-2">Optimized Product</h3>
-          <div className="border p-2 rounded-md">
-            <p><strong>Title:</strong> {optimized_product.title}</p>
-            <p><strong>Description:</strong> {optimized_product.description}</p>
-            <p><strong>Price:</strong> ${optimized_product.price}</p>
-            <p><strong>SKU:</strong> {optimized_product.sku}</p>
+          <h3 className="text-xl font-semibold mb-3">Optimized Product Details</h3>
+          <div className="border p-4 rounded-lg bg-blue-50">
+            <p className="mb-1"><strong>Title:</strong> {optimized_product.title}</p>
+            <p className="mb-1"><strong>Description:</strong> {optimized_product.description}</p>
+            <p className="mb-1"><strong>Price:</strong> ${optimized_product.price}</p>
+            <p className="mb-1"><strong>SKU:</strong> {optimized_product.sku}</p>
             <p><strong>Tags:</strong> {optimized_product.tags}</p>
           </div>
         </div>
       </div>
 
-      <div className="mb-4">
-        <h3 className="text-lg font-semibold mb-2">Comparison Metrics</h3>
-        <div className="overflow-x-auto">
+      <div className="mb-6">
+        <h3 className="text-xl font-semibold mb-3">Comparison Metrics Overview</h3>
+        <div className="overflow-x-auto mb-4">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-2 py-1 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Metric</th>
-                <th className="px-2 py-1 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Original Score</th>
-                <th className="px-2 py-1 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Optimized Score</th>
-                <th className="px-2 py-1 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Insight</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Metric</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Original Score</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Optimized Score</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Insight</th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
               {Object.entries(comparison).map(([key, value]) => (
                 <tr key={key}>
-                  <td className="px-2 py-1 whitespace-nowrap text-xs font-medium text-gray-900">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                     {key.replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase())}
                   </td>
-                  <td className="px-2 py-1 whitespace-nowrap text-xs text-gray-500">{value.original}</td>
-                  <td className="px-2 py-1 whitespace-nowrap text-xs text-gray-500">{value.optimized}</td>
-                  <td className="px-2 py-1 text-xs text-gray-500 max-w-xs break-words">{value.insight}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{value.original}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{value.optimized}</td>
+                  <td className="px-6 py-4 text-sm text-gray-500 max-w-md break-words">{value.insight}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        
+        <p className="text-gray-700">
+          <strong>Overall Optimization Conclusion:</strong> {conclusion}
+        </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 mb-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div>
-          <h3 className="text-lg font-semibold mb-2">Comparison Metrics Chart</h3>
-          <ResponsiveContainer width="100%" height={200}>
-            <BarChart data={chartData} margin={{ top: 5, right: 5, left: -20, bottom: 5 }}>
+          <h3 className="text-xl font-semibold mb-3">Metric Scores Comparison</h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" tick={{ fontSize: 10 }} />
-              <YAxis tick={{ fontSize: 10 }} />
+              <XAxis dataKey="name" />
+              <YAxis />
               <Tooltip />
-              <Legend wrapperStyle={{ fontSize: '10px' }} />
-              <Bar dataKey="original" fill="#FF8042" />
-              <Bar dataKey="optimized" fill="#0088FE" />
+              <Legend />
+              <Bar dataKey="original" fill="#FF8042" name="Original Score" />
+              <Bar dataKey="optimized" fill="#0088FE" name="Optimized Score" />
             </BarChart>
           </ResponsiveContainer>
         </div>
         <div>
-          <h3 className="text-lg font-semibold mb-2">Overall SEO Impact</h3>
-          <ResponsiveContainer width="100%" height={200}>
+          <h3 className="text-xl font-semibold mb-3">Overall SEO Impact Score</h3>
+          <ResponsiveContainer width="100%" height={300}>
             <PieChart>
               <Pie
                 data={pieChartData}
                 cx="50%"
                 cy="50%"
                 labelLine={false}
-                outerRadius={60}
+                outerRadius={100}
                 fill="#8884d8"
                 dataKey="value"
                 label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
@@ -193,18 +195,16 @@ const ProductComparisonPage: React.FC = () => {
                 ))}
               </Pie>
               <Tooltip />
-              <Legend wrapperStyle={{ fontSize: '10px' }} />
+              <Legend />
             </PieChart>
           </ResponsiveContainer>
+          <p className="text-gray-700 text-center mt-3">
+            <strong>Insight:</strong> {overall_score.insight}
+          </p>
         </div>
-      </div>
-
-      <div>
-        <h3 className="text-lg font-semibold mb-2">Conclusion</h3>
-        <p className="text-xs text-gray-700">{conclusion}</p>
       </div>
     </div>
   );
 };
 
-export default ProductComparisonPage;
+export default DetailedInsightsPage;

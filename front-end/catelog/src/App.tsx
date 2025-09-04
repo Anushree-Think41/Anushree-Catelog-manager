@@ -12,6 +12,8 @@ import OptimizationSuccessPage from './pages/OptimizationSuccessPage';
 import ProductInsightsPage from './pages/ProductInsightsPage';
 import AgentPlaygroundPage from './pages/AgentPlaygroundPage'; // Import AgentPlaygroundPage
 import ProductComparisonPage from './pages/ProductComparisonPage';
+import DetailedInsightsPage from './pages/DetailedInsightsPage';
+import InsightsOverviewPage from './pages/InsightsOverviewPage';
 
 function App() {
   return (
@@ -24,10 +26,12 @@ function App() {
         <Route path="/optimization-success" element={<OptimizationSuccessPage />} />
         <Route path="/upload" element={<Layout><UploadAndListProductsPage /></Layout>} />
         <Route path="/product-catalog" element={<Layout><ProductCatalogPage /></Layout>} />
+        <Route path="/insights-overview" element={<Layout><InsightsOverviewPage /></Layout>} />
         <Route path="/optimize" element={<Layout><OptimizePage /></Layout>} />
         <Route path="/optimize-products" element={<Layout><OptimizeProductsPage /></Layout>} />
         <Route path="/product-insights/:productId" element={<Layout><ProductInsightsPage /></Layout>} />
-        <Route path="/product-comparison/:productId" element={<Layout><ProductComparisonPage /></Layout>} />
+        <Route path="/product-comparison/:optimizedProductId" element={<Layout><ProductComparisonPage /></Layout>} />
+        <Route path="/detailed-insights/:optimizedProductId" element={<Layout><DetailedInsightsPage /></Layout>} />
         <Route path="/agent-playground" element={<Layout><AgentPlaygroundPage /></Layout>} /> {/* New route for AgentPlaygroundPage */}
       </Routes>
     </Router>

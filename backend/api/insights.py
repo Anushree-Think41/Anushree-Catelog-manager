@@ -104,7 +104,7 @@ async def get_product_insights(product: OptimizedProduct):
         return {
             "message": "Product details received, insights generated",
             "product_id": product.id,
-            "insights": insights_data,
+            "insights": insights,
         }
 
     except Exception as e:
@@ -162,10 +162,119 @@ async def get_product_comparison(
         raise HTTPException(status_code=404, detail="Original product not found for this optimized product.")
 
     try:
+        print(f"Comparing products: original_id={original_product.id}, optimized_id={optimized_product.id}")
         comparison_insights = groq_service.compare_product_descriptions(
             original_description=original_product.description,
             optimized_description=optimized_product.description
         )
+        print(f"Comparison insights generated successfully for optimized_product_id={optimized_product_id}")
         return {"optimized_product_id": optimized_product_id, "comparison": comparison_insights}
     except Exception as e:
+        print(f"Error generating comparison: {e}")
         raise HTTPException(status_code=500, detail=f"Failed to generate product comparison: {str(e)}")
+
+@router.get("/product-details/{optimized_product_id}")
+async def get_product_details(
+    optimized_product_id: int,
+    db: Session = Depends(get_db)
+):
+    """
+    Fetches the original and optimized product details.
+    """
+    optimized_product = db.query(OptimizedProductModel).filter(OptimizedProductModel.id == optimized_product_id).first()
+    if not optimized_product:
+        raise HTTPException(status_code=404, detail="Optimized product not found.")
+
+    original_product = db.query(Product).filter(Product.id == optimized_product.original_product_id).first()
+    if not original_product:
+        raise HTTPException(status_code=404, detail="Original product not found for this optimized product.")
+
+    return {
+        "original_product": {
+            "title": original_product.title,
+            "description": original_product.description,
+            "price": original_product.price,
+            "sku": original_product.sku,
+            "tags": original_product.tags,
+        },
+        "optimized_product": {
+            "title": optimized_product.title,
+            "description": optimized_product.description,
+            "price": optimized_product.price,
+            "sku": optimized_product.sku,
+            "tags": optimized_product.tags,
+        },
+    }
+
+@router.get("/overall-product-comparison-summary")
+async def get_overall_product_comparison_summary(db: Session = Depends(get_db)):
+    """
+    Calculates the average overall comparison scores for all optimized products.
+    """
+    optimized_products = db.query(OptimizedProductModel).all()
+    
+    total_original_overall_score = 0
+    total_optimized_overall_score = 0
+    total_seo_keyword_richness = 0
+    total_clarity_readability = 0
+    total_persuasiveness = 0
+    total_uniqueness = 0
+    total_best_practices = 0
+    compared_products_count = 0
+
+    for optimized_product in optimized_products:
+        original_product = db.query(Product).filter(Product.id == optimized_product.original_product_id).first()
+        
+        if original_product:
+            try:
+                comparison_insights = groq_service.compare_product_descriptions(
+                    original_description=original_product.description,
+                    optimized_description=optimized_product.description
+                )
+                overall_score = comparison_insights.get("overall_score")
+                if overall_score:
+                    total_original_overall_score += overall_score.get("original", 0)
+                    total_optimized_overall_score += overall_score.get("optimized", 0)
+                    
+                    # Accumulate individual metric scores
+                    total_seo_keyword_richness += comparison_insights.get("seo_keyword_richness", 0)
+                    total_clarity_readability += comparison_insights.get("clarity_readability", 0)
+                    total_persuasiveness += comparison_insights.get("persuasiveness", 0)
+                    total_uniqueness += comparison_insights.get("uniqueness", 0)
+                    total_best_practices += comparison_insights.get("best_practices", 0)
+
+                    compared_products_count += 1
+            except Exception as e:
+                print(f"Error comparing product {optimized_product.id}: {e}")
+                # Continue to next product even if one fails
+
+    if compared_products_count == 0:
+        return {
+            "average_original_overall_score": 0,
+            "average_optimized_overall_score": 0,
+            "average_seo_keyword_richness": 0,
+            "average_clarity_readability": 0,
+            "average_persuasiveness": 0,
+            "average_uniqueness": 0,
+            "average_best_practices": 0,
+            "message": "No products found for comparison or all comparisons failed."
+        }
+
+    average_original_overall_score = total_original_overall_score / compared_products_count
+    average_optimized_overall_score = total_optimized_overall_score / compared_products_count
+    average_seo_keyword_richness = total_seo_keyword_richness / compared_products_count
+    average_clarity_readability = total_clarity_readability / compared_products_count
+    average_persuasiveness = total_persuasiveness / compared_products_count
+    average_uniqueness = total_uniqueness / compared_products_count
+    average_best_practices = total_best_practices / compared_products_count
+
+    return {
+        "average_original_overall_score": round(average_original_overall_score, 2),
+        "average_optimized_overall_score": round(average_optimized_overall_score, 2),
+        "average_seo_keyword_richness": round(average_seo_keyword_richness, 2),
+        "average_clarity_readability": round(average_clarity_readability, 2),
+        "average_persuasiveness": round(average_persuasiveness, 2),
+        "average_uniqueness": round(average_uniqueness, 2),
+        "average_best_practices": round(average_best_practices, 2),
+        "compared_products_count": compared_products_count
+    }
