@@ -1,7 +1,7 @@
 # backend/main.py
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.api import products, auth, optimize,shopify_sync
+from backend.api import products, auth, optimize, shopify_sync, insights, agent_playground # Import agent_playground
 from backend.mcp_server import mcp_app  # ✅ import the ASGI app instead
 
 app = FastAPI(title="Catalog Manager Backend")
@@ -24,6 +24,8 @@ app.include_router(products.router, prefix="/products", tags=["Products"])
 app.include_router(auth.router, prefix="/auth", tags=["Auth"])
 app.include_router(optimize.router, prefix="/optimize", tags=["Optimize"])
 app.include_router(shopify_sync.router, prefix="/shopify", tags=["Shopify"])
+app.include_router(insights.router, prefix="/api", tags=["Insights"])
+app.include_router(agent_playground.router, prefix="/api", tags=["Agent Playground"]) # Include agent_playground router
 # Mount MCP server under /mcp
 app.mount("/mcp/", mcp_app)
 

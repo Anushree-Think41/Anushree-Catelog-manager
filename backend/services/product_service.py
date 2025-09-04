@@ -56,7 +56,7 @@ def create_optimized_product(db: Session, original_product: Product, optimized_d
         description=optimized_data.get("description", original_product.description),
         price=original_product.price,
         sku=original_product.sku,
-        tags=",".join(optimized_data.get("tags", [])),
+        tags=", ".join(optimized_data.get("tags", [])),
         shopify_id=original_product.shopify_id
     )
     db.add(optimized_product)
@@ -66,3 +66,6 @@ def create_optimized_product(db: Session, original_product: Product, optimized_d
 
 def get_all_optimized_products(db: Session) -> list[OptimizedProduct]:
     return db.query(OptimizedProduct).all()
+
+def get_optimized_product_by_id(db: Session, product_id: int) -> Optional[OptimizedProduct]:
+    return db.query(OptimizedProduct).filter(OptimizedProduct.id == product_id).first()

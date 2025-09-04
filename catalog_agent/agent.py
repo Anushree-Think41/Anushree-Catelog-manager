@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from google.adk.agents import LlmAgent
 from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset
 from google.adk.tools.mcp_tool.mcp_session_manager import SseConnectionParams
+from google.adk.tools import google_search # Import google_search directly
 
 # Load environment variables
 load_dotenv()
@@ -18,5 +19,6 @@ shopify_toolset = MCPToolset(
 root_agent = LlmAgent(
     name="catalog_agent",
     model="gemini-1.5-flash-latest",  # can be made configurable via env
-    tools=[shopify_toolset],
+    tools=[shopify_toolset], # Use google_search directly
+    # tools=[google_search]
 )

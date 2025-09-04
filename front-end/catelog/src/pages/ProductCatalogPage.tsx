@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import axios from 'axios'; // Import axios for API calls
 import type { OptimizedProduct } from '../types'; // Assuming you have an OptimizedProduct type
 
@@ -14,11 +14,16 @@ const ProductCatalogPage: React.FC = () => {
   const [optimizedProducts, setOptimizedProducts] = useState<OptimizedProduct[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate(); // Initialize useNavigate
 
   // Re-introducing state for search and filters, though they won't be used for optimized products initially
   const [filters, setFilters] = useState({ search: '', category: '' });
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFilters({ ...filters, search: e.target.value });
+  };
+
+  const handleProductClick = async (product: OptimizedProduct) => {
+    navigate(`/product-comparison/${product.id}`);
   };
 
   useEffect(() => {
@@ -90,7 +95,7 @@ const ProductCatalogPage: React.FC = () => {
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
               {(optimizedProducts || []).map((product) => (
-                <tr key={product.id}>
+                <tr key={product.id} onClick={() => handleProductClick(product)} className="cursor-pointer hover:bg-gray-100">
                   <td className="px-6 py-4 whitespace-nowrap">
                     <input type="checkbox" className="form-checkbox" />
                   </td>

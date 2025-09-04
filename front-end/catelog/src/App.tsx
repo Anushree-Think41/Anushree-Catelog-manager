@@ -9,6 +9,9 @@ import CategoryPage from './pages/CategoryPage';
 import SEOFocusPage from './pages/SEOFocusPage';
 import WritingTonePage from './pages/WritingTonePage';
 import OptimizationSuccessPage from './pages/OptimizationSuccessPage';
+import ProductInsightsPage from './pages/ProductInsightsPage';
+import AgentPlaygroundPage from './pages/AgentPlaygroundPage'; // Import AgentPlaygroundPage
+import ProductComparisonPage from './pages/ProductComparisonPage';
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
         <Route path="/product-catalog" element={<Layout><ProductCatalogPage /></Layout>} />
         <Route path="/optimize" element={<Layout><OptimizePage /></Layout>} />
         <Route path="/optimize-products" element={<Layout><OptimizeProductsPage /></Layout>} />
+        <Route path="/product-insights/:productId" element={<Layout><ProductInsightsPage /></Layout>} />
+        <Route path="/product-comparison/:productId" element={<Layout><ProductComparisonPage /></Layout>} />
+        <Route path="/agent-playground" element={<Layout><AgentPlaygroundPage /></Layout>} /> {/* New route for AgentPlaygroundPage */}
       </Routes>
     </Router>
   );

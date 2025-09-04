@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
 from backend.db.database import get_db
-from backend.services.product_service import get_all_products, get_product_by_shopify_id, get_all_optimized_products
+from backend.services.product_service import get_all_products, get_product_by_shopify_id, get_all_optimized_products, get_product_by_id, get_optimized_product_by_id
 from backend.db.schemas import ProductOut, OptimizedProductOut
 from backend.services import shopify_service
 from backend.services.shopify_service import ShopifyService 
@@ -14,6 +14,25 @@ def get_products(db: Session = Depends(get_db)):
     print(f"Products from DB: {products}")
     return products
 
+@router.get("/optimized-products", response_model=list[OptimizedProductOut])
+def get_optimized_products(db: Session = Depends(get_db)):
+    optimized_products = get_all_optimized_products(db)
+    print(f"Raw optimized products from DB: {optimized_products}")
+    return optimized_products
+
+@router.get("/optimized-products/{product_id}", response_model=OptimizedProductOut)
+def get_single_optimized_product(product_id: int, db: Session = Depends(get_db)):
+    optimized_product = get_optimized_product_by_id(db, product_id)
+    if not optimized_product:
+        raise HTTPException(status_code=404, detail="Optimized product not found")
+    return optimized_product
+
+@router.get("/{product_id}", response_model=ProductOut)
+def get_product(product_id: int, db: Session = Depends(get_db)):
+    product = get_product_by_id(db, product_id)
+    if not product:
+        raise HTTPException(status_code=404, detail="Product not found")
+    return product
 
 @router.post("/")
 async def create_product(product: dict):
@@ -61,8 +80,3 @@ def fetch_product(shopify_id: str, db: Session = Depends(get_db)):
     if not product:
         raise HTTPException(status_code=404, detail="Product not found")
     return product
-
-@router.get("/optimized-products", response_model=list[OptimizedProductOut])
-def get_optimized_products(db: Session = Depends(get_db)):
-    optimized_products = get_all_optimized_products(db)
-    return optimized_products
