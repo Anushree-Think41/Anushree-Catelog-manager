@@ -1,6 +1,6 @@
 import logging
 from sqlalchemy.orm import Session
-from backend.db.database import SessionLocal
+from backend.db.database import SessionLocal, get_db # Import get_db
 from backend.db.models import Product
 from backend.services.shopify_service import ShopifyService
 
@@ -50,6 +50,19 @@ async def sync_products_from_shopify(limit: int = 20):
 
         db.commit()
         logger.info("DB commit successful ✅")
+
+        # Temporary check: Verify products are visible after commit
+        try:
+            # Create a new session to ensure we're not seeing cached data
+            new_db = next(get_db())
+            products_after_sync = new_db.query(Product).all()
+            logger.info(f"Verification: Found {len(products_after_sync)} products in DB immediately after sync.")
+        except Exception as e:
+            logger.error(f"Verification Error: {e}")
+        finally:
+            if 'new_db' in locals() and new_db:
+                new_db.close()
+
     except Exception as e:
         logger.error(f"Sync failed: {e}")
         db.rollback()
