@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ai-sdk/google": "^2.0.11",
+    "@ai-sdk/react": "^2.0.30",
     "@tailwindcss/vite": "^4.1.12",
+    "ai": "^5.0.30",
     "axios": "^1.11.0",
     "rc-progress": "^4.0.0",
     "react": "^19.1.1",

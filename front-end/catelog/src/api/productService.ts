@@ -77,3 +77,13 @@ export const getUniqueFilterOptions = async () => {
     throw error;
   }
 };
+
+export const updateProductOnShopify = async (optimizedProductId: string) => {
+  try {
+    const response = await axios.post(`${API_BASE_URL}/shopify/products/shopify/update-single/${optimizedProductId}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error updating product ${optimizedProductId} on Shopify:`, error);
+    throw error;
+  }
+};
