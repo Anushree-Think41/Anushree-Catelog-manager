@@ -11,13 +11,16 @@ class ProductInput(BaseModel):
     title: str
     description: str
     tags: str
+    category: str | None = None
+    seoFocus: str | None = None
+    writingTone: str | None = None
 
 # Load prompt
 PROMPT_PATH = Path(__file__).parent / "prompts/optimizer_prompt.txt"
 with open(PROMPT_PATH, "r") as f:
     OPTIMIZER_PROMPT = f.read()
 
-async def optimize_product(product: dict) -> dict:
+async def optimize_product(product: dict, category: str | None = None, seo_focus: str | None = None, writing_tone: str | None = None) -> dict:
     """
     Optimizes product using Gemini API directly.
     """
@@ -30,8 +33,14 @@ async def optimize_product(product: dict) -> dict:
     try:
         model = genai.GenerativeModel('gemini-1.5-flash-latest')
         
-        # Construct the prompt with product details
+        # Construct the prompt with product details and new parameters
         full_prompt = f"{OPTIMIZER_PROMPT}\n\nProduct: {json.dumps(product)}"
+        if category:
+            full_prompt += f"\nCategory: {category}"
+        if seo_focus:
+            full_prompt += f"\nSEO Focus: {seo_focus}"
+        if writing_tone:
+            full_prompt += f"\nWriting Tone: {writing_tone}"
 
         retries = 5
         delay = 10  # seconds

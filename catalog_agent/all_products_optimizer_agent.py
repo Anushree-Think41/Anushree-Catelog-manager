@@ -9,12 +9,14 @@ from google.adk.sessions.session import Session
 from google.adk.tools.tool_context import ToolContext
 from google.adk.agents import LlmAgent
 from google.genai import types
+from backend.db.models import Product # Import Product model
 
-async def optimize_all_products():
+async def optimize_all_products(category: str | None = None, seo_focus: str | None = None, writing_tone: str | None = None):
     """
     Fetches all products from the database, optimizes them, and creates optimized entries.
     """
     print("Starting product optimization...")
+    await asyncio.sleep(5) # Add a small delay to ensure data visibility after sync
 
     # 1. Create InvocationContext and ToolContext (still needed for optimize_product)
     session_service = InMemorySessionService()
@@ -36,8 +38,17 @@ async def optimize_all_products():
 
     db = next(get_db())
     try:
-        products = get_all_products(db)
-        print(f"Found {len(products)} products to optimize.")
+        print("Attempting to fetch products from DB...")
+        products = db.query(Product).all() # Directly query to rule out get_all_products function issue
+        print(f"Found {len(products)} products to optimize (direct query).")
+
+        if not products:
+            print("No products found. Trying to refresh session and query again...")
+            db.rollback() # Rollback any pending transactions to get a fresh state
+            db.close()
+            db = next(get_db()) # Get a new session
+            products = db.query(Product).all()
+            print(f"Found {len(products)} products to optimize (after refresh).")
 
         for product in products:
             print(f"Optimizing product: {product.title}")
@@ -47,7 +58,7 @@ async def optimize_all_products():
                 "tags": product.tags,
             }
 
-            optimized_data = await optimize_product(product_input)
+            optimized_data = await optimize_product(product_input, category, seo_focus, writing_tone)
 
             if "error" not in optimized_data:
                 if product.id:
