@@ -1,81 +1,85 @@
-# 📦 Catalog Manager
+## User Story
+**As an E-commerce Manager, I want to efficiently manage and optimize my product listings to improve SEO, increase conversion rates, and streamline my workflow, so that I can maximize sales and minimize manual effort.**
 
-AI-powered catalog optimizer for e-commerce teams.  
-This tool integrates with **Shopify** and provides product CRUD, optimization using **Google Gemini**, and database persistence with **PostgreSQL + Alembic**.
+## Core Functionalities
 
----
+### 1. Product Catalog Management
 
-## 🚀 Features
-- ✅ **CRUD API** for managing products (FastAPI)
-- ✅ **Shopify Integration** – fetch, create, update products
-- ✅ **AI-Powered Optimization** – generate improved product titles, descriptions, tags
-- ✅ **Database Persistence** – PostgreSQL with Alembic migrations
-- ✅ **Modular Architecture** – services, APIs, and tools separated for maintainability
+*   **View Product Catalog:** Users can view a comprehensive list of all products in their catalog, including original and optimized versions.
+*   **Product Details:** Users can view detailed information for each product (title, description, price, SKU, tags).
+*   **Shopify Sync:** Users can synchronize their product catalog with Shopify, importing existing products and updating product information.
 
----
+### 2. AI-Powered Product Optimization
 
-## 📂 Project Structure
-backend/
-│── main.py # FastAPI entry point
-│── api/ # Routes
-│ ├── init.py
-│ ├── products.py # Product CRUD API
-│ └── auth.py # Auth endpoints (optional)
-│── services/ # Business logic
-│ ├── init.py
-│ ├── shopify_service.py # Shopify API wrapper
-│ └── product_service.py # Internal product logic
-│── db/ # Database models & migrations
-│ ├── init.py
-│ ├── models.py # SQLAlchemy models
-│ ├── schemas.py # Pydantic schemas
-│ └── migrations/ # Alembic migrations
-│── utils/ # Helpers
-│ └── logger.py
+*   **Initial Optimization:** Users can submit original product details for AI-powered optimization to generate improved titles, descriptions, and tags.
 
+*   **Optimization Parameters:** Users can specify optimization parameters like category, SEO focus, and writing tone for bulk optimization.
+
+### 3. Product Comparison & Insights
+
+*   **Side-by-Side Comparison:** Users can view a side-by-side comparison of original and optimized product details.
+*   **Performance Metrics:** The system provides quantitative metrics (0-100 scores) for various aspects like SEO keyword richness, clarity, persuasiveness, uniqueness, and best practices for both original and optimized versions.
+*   **Overall SEO Impact:** An overall score indicating the potential SEO improvement of the optimized version.
+*   **Key Improvements & Conclusion:** AI-generated insights highlighting specific improvements and a summary conclusion of the optimization.
+*   **Product Insights Generation:** Users can generate insights for a product, including competitor analysis and keyword suggestions.
+
+### 4. Shopify Integration
+
+*   **Update Product on Shopify:** Users can push optimized product details directly to their Shopify store.
+*   **Bulk Update to Shopify:** Users can update multiple optimized products to Shopify simultaneously.
+
+### 5. Agent-Based Interaction (Underlying Infrastructure)
+
+*   The system leverages an AI agent (`root_agent`, `product_optimizer_agent`) to perform complex tasks like optimization and insight generation.
 
 
----
 
-## ⚙️ Setup & Installation
-
-### 1. Clone the Repo
-    ```bash
-    git clone https://github.com/yourusername/catalog-manager.git
-    cd catalog-manager/backend
-    ```
-
-### 2. Create Virtual Environment
-    ```bash 
-    python -m venv .venv
-    source .venv/bin/activate
-    ```
-### 3. Install Dependencies
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-### 4. Setup Environment Variables
-    Create a .env file in backend/:
-
-    DATABASE_URL=postgresql+psycopg2://postgres:password@localhost:5432/catalog_db
-    SHOPIFY_STORE_URL=yourstore.myshopify.com
-    SHOPIFY_ACCESS_TOKEN=your_private_token
-    GOOGLE_API_KEY=your_google_api_key
-
-### 5. Run Database Migrations
-    alembic upgrade head
-
-### 6. Start Backend
-    uvicorn main:app --reload
-
-
-##    🛠️ Tech Stack
-
-    Backend: FastAPI
-
-    Database: PostgreSQL + SQLAlchemy + Alembic
-
-    AI: Google ADK
-
-    Integration: Shopify REST Admin API
+ ┌─────────────────────┐
+ │    Shopify Store    │
+ │ (Products, Updates) │
+ └─────────┬───────────┘
+           │  API Sync (Import/Update)
+           ▼
+ ┌─────────────────────┐
+ │   FastAPI Backend   │
+ │  (Python, Agents)   │
+ ├─────────────────────┤
+ │ - Shopify API Calls │
+ │ - DB Operations     │
+ │ - Agent Orches      |
+ └─────────┬───────────┘
+           │
+           │   (CRUD + Optimizations)
+           ▼
+ ┌─────────────────────┐
+ │   PostgreSQL DB     │
+ │ (Products,  │
+ │  Optimizations)     │
+ └─────────┬───────────┘
+           │
+           │   Request/Response
+           ▼
+ ┌──────────────────────────┐
+ │        AI Agents         │
+ │ 
+ ├──────────────────────────┤
+ │ - Optimize Titles/Descs  │
+ │ - Generate SEO Tags      │
+ │ - Provide Insights       │
+ │ - Score Content (0–100)  │
+ │ - Side-by-Side Reports   │
+ └─────────┬───────────────┘
+           │
+           │  JSON Output
+           ▼
+ ┌─────────────────────┐
+ │     React Frontend  │
+ │  (Catalog Manager)  │
+ ├─────────────────────┤
+ │ - get personalized input
+ | - Product List View │
+ │ - Comparison UI     │
+ │ - Insights Display  │
+ │ - Bulk Optimization │
+ │ - Push to Shopify   │
+ └─────────────────────┘
