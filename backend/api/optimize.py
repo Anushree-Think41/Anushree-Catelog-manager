@@ -18,6 +18,7 @@ router = APIRouter()
 class ProductOptimizationRequest(BaseModel):
     prompt: str
     product_details: dict # This will contain title, description, tags
+    reoptimize: bool = False
 
 class OptimizationParameters(BaseModel):
     category: str | None = None
@@ -83,6 +84,16 @@ async def optimize_product_endpoint(
     if not product:
         raise HTTPException(status_code=404, detail="Product not found")
 
+    # If reoptimize is false, check if an optimized version already exists
+    if not request.reoptimize:
+        optimized_product_entry = db.query(OptimizedProduct).filter(OptimizedProduct.original_product_id == product_id).first()
+        if optimized_product_entry:
+            return {
+                "original": product,
+                "optimized": optimized_product_entry,
+                "message": "Product already optimized. Set 'reoptimize' to true to re-optimize."
+            }
+
     # 2. Prepare product input
     product_input = {
         "title": product.title,
@@ -92,7 +103,7 @@ async def optimize_product_endpoint(
 
     # 3. Call agent to optimize product
     try:
-        optimized_data = await optimize_product(product_input)
+        optimized_data = await optimize_product(product_input, user_prompt=request.prompt if request.reoptimize else None)
         if "error" in optimized_data:
             # Handle cases where the agent output is not valid JSON
             raise HTTPException(status_code=500, detail=f"Agent error: {optimized_data['error']}. Raw output: {optimized_data.get('raw_output')}")

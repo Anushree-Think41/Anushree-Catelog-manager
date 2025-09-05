@@ -20,7 +20,7 @@ PROMPT_PATH = Path(__file__).parent / "prompts/optimizer_prompt.txt"
 with open(PROMPT_PATH, "r") as f:
     OPTIMIZER_PROMPT = f.read()
 
-async def optimize_product(product: dict, category: str | None = None, seo_focus: str | None = None, writing_tone: str | None = None) -> dict:
+async def optimize_product(product: dict, category: str | None = None, seo_focus: str | None = None, writing_tone: str | None = None, user_prompt: str | None = None) -> dict:
     """
     Optimizes product using Gemini API directly.
     """
@@ -41,6 +41,8 @@ async def optimize_product(product: dict, category: str | None = None, seo_focus
             full_prompt += f"\nSEO Focus: {seo_focus}"
         if writing_tone:
             full_prompt += f"\nWriting Tone: {writing_tone}"
+        if user_prompt:
+            full_prompt += f"\nUser Input for Re-optimization: {user_prompt}"
 
         retries = 5
         delay = 10  # seconds

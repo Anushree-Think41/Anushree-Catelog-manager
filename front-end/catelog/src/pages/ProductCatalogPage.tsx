@@ -131,6 +131,44 @@ const ProductCatalogPage: React.FC = () => {
     }
   };
 
+  const handleReoptimizeProduct = async (productId: number) => {
+    try {
+      // Assuming your backend is running on http://localhost:8000
+      const response = await axios.post(
+        `http://localhost:8000/products/${productId}/optimize`,
+        {
+          prompt: "Re-optimize this product.", // You might want a more dynamic prompt here
+          product_details: {}, // This will be populated by the backend
+          reoptimize: true,
+        }
+      );
+      console.log("Re-optimization response:", response.data);
+      alert("Product re-optimization started successfully!");
+      // Optionally, re-fetch products or update UI to reflect changes
+      // For now, just re-fetch all optimized products to see the latest
+      const fetchOptimizedProducts = async () => {
+        try {
+          setLoading(true);
+          const response = await axios.get<OptimizedProduct[]>(
+            "http://localhost:8000/products/optimized-products"
+          );
+          setOriginalProducts(response.data);
+          setOptimizedProducts(response.data);
+        } catch (err) {
+          setError("Failed to fetch optimized products.");
+          console.error(err);
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetchOptimizedProducts();
+
+    } catch (error) {
+      console.error("Error re-optimizing product:", error);
+      alert("Failed to re-optimize product.");
+    }
+  };
+
   if (loading) {
     return (
       <div className="flex h-screen items-center justify-center">
@@ -163,7 +201,6 @@ const ProductCatalogPage: React.FC = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
         </div>
-    <InsightsOverviewPage />
     
     <div className="min-h-screen bg-gray-100">
       
@@ -323,7 +360,7 @@ const ProductCatalogPage: React.FC = () => {
                       onClick={() =>
                         navigate(`/product-comparison/${product.id}`)
                       }
-                      className="text-indigo-600 hover:text-indigo-900 flex items-center justify-end"
+                      className="text-indigo-600 hover:text-indigo-900 flex items-center justify-end mb-2"
                     >
                       {/* Eye Icon */}
                       <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -331,6 +368,16 @@ const ProductCatalogPage: React.FC = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                       </svg>
                       View Insights
+                    </button>
+                    <button
+                      onClick={() => handleReoptimizeProduct(product.id)}
+                      className="text-purple-600 hover:text-purple-900 flex items-center justify-end"
+                    >
+                      {/* Refresh Icon */}
+                      <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004 12c0 2.114.816 4.021 2.176 5.451m-.006-.451H4v5m2.176-5.451A8.001 8.001 0 0120 12c0-2.114-.816-4.021-2.176-5.451"></path>
+                      </svg>
+                      Re-optimize
                     </button>
                   </td>
                 </tr>

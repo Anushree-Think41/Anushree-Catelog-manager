@@ -14,6 +14,7 @@ import AgentPlaygroundPage from './pages/AgentPlaygroundPage'; // Import AgentPl
 import ProductComparisonPage from './pages/ProductComparisonPage';
 import DetailedInsightsPage from './pages/DetailedInsightsPage';
 import InsightsOverviewPage from './pages/InsightsOverviewPage';
+import Chat from './pages/Chat';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/product-comparison/:optimizedProductId" element={<Layout><ProductComparisonPage /></Layout>} />
         <Route path="/detailed-insights/:optimizedProductId" element={<Layout><DetailedInsightsPage /></Layout>} />
         <Route path="/agent-playground" element={<Layout><AgentPlaygroundPage /></Layout>} /> {/* New route for AgentPlaygroundPage */}
+        <Route path="/chat" element={<Layout><Chat /></Layout>} />
       </Routes>
     </Router>
   );

@@ -14,6 +14,11 @@ interface OverallSummary {
   message?: string;
 }
 
+interface OptimizedProduct {
+  id: number;
+  // Add other fields if necessary, but 'id' is crucial for this task
+}
+
 const InsightsOverviewPage: React.FC = () => {
   const [overallSummary, setOverallSummary] = useState<OverallSummary | null>(null);
   const [loading, setLoading] = useState<boolean>(true);

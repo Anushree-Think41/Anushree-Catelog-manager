@@ -1,0 +1,1024 @@
+2025-09-05 09:03:08,946 - INFO - Fetched 20 products from Shopify
+2025-09-05 09:05:19,026 - INFO - Fetched 20 products from Shopify
+2025-09-05 09:06:49,923 - INFO - Fetched 20 products from Shopify
+2025-09-05 09:09:14,055 - INFO - Fetched 20 products from Shopify
+2025-09-05 09:16:54,406 - INFO - Fetched 20 products from Shopify
+2025-09-05 10:46:23,124 - INFO - Sending messages to Groq: [{'role': 'user', 'content': 'hi'}]
+2025-09-05 10:46:23,345 - INFO - Received chunk from Groq: 
+2025-09-05 10:46:23,357 - INFO - Received chunk from Groq: How
+2025-09-05 10:46:23,358 - INFO - Received chunk from Groq:  can
+2025-09-05 10:46:23,358 - INFO - Received chunk from Groq:  I
+2025-09-05 10:46:23,358 - INFO - Received chunk from Groq:  assist
+2025-09-05 10:46:23,359 - INFO - Received chunk from Groq:  you
+2025-09-05 10:46:23,359 - INFO - Received chunk from Groq:  today
+2025-09-05 10:46:23,359 - INFO - Received chunk from Groq: ?
+2025-09-05 10:46:23,360 - INFO - Received chunk from Groq: 
+2025-09-05 10:47:15,823 - INFO - Sending messages to Groq: [{'role': 'user', 'content': 'give me details of original product details'}]
+2025-09-05 10:47:16,270 - INFO - Received chunk from Groq: 
+2025-09-05 10:47:16,272 - INFO - Received chunk from Groq: However
+2025-09-05 10:47:16,272 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:16,273 - INFO - Received chunk from Groq:  I
+2025-09-05 10:47:16,273 - INFO - Received chunk from Groq:  need
+2025-09-05 10:47:16,273 - INFO - Received chunk from Groq:  more
+2025-09-05 10:47:16,274 - INFO - Received chunk from Groq:  information
+2025-09-05 10:47:16,274 - INFO - Received chunk from Groq:  about
+2025-09-05 10:47:16,274 - INFO - Received chunk from Groq:  the
+2025-09-05 10:47:16,275 - INFO - Received chunk from Groq:  specific
+2025-09-05 10:47:16,275 - INFO - Received chunk from Groq:  product
+2025-09-05 10:47:16,276 - INFO - Received chunk from Groq:  you
+2025-09-05 10:47:16,276 - INFO - Received chunk from Groq: 're
+2025-09-05 10:47:16,276 - INFO - Received chunk from Groq:  interested
+2025-09-05 10:47:16,277 - INFO - Received chunk from Groq:  in
+2025-09-05 10:47:16,277 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:16,278 - INFO - Received chunk from Groq:  Please
+2025-09-05 10:47:16,278 - INFO - Received chunk from Groq:  provide
+2025-09-05 10:47:16,278 - INFO - Received chunk from Groq:  me
+2025-09-05 10:47:16,279 - INFO - Received chunk from Groq:  with
+2025-09-05 10:47:16,279 - INFO - Received chunk from Groq:  more
+2025-09-05 10:47:16,280 - INFO - Received chunk from Groq:  details
+2025-09-05 10:47:16,280 - INFO - Received chunk from Groq:  or
+2025-09-05 10:47:16,280 - INFO - Received chunk from Groq:  context
+2025-09-05 10:47:16,281 - INFO - Received chunk from Groq:  about
+2025-09-05 10:47:16,281 - INFO - Received chunk from Groq:  the
+2025-09-05 10:47:16,282 - INFO - Received chunk from Groq:  product
+2025-09-05 10:47:16,282 - INFO - Received chunk from Groq:  you
+2025-09-05 10:47:16,282 - INFO - Received chunk from Groq: 're
+2025-09-05 10:47:16,283 - INFO - Received chunk from Groq:  looking
+2025-09-05 10:47:16,283 - INFO - Received chunk from Groq:  for
+2025-09-05 10:47:16,283 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:16,284 - INFO - Received chunk from Groq:  such
+2025-09-05 10:47:16,284 - INFO - Received chunk from Groq:  as
+2025-09-05 10:47:16,285 - INFO - Received chunk from Groq: :
+
+
+2025-09-05 10:47:16,285 - INFO - Received chunk from Groq: 1
+2025-09-05 10:47:16,285 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:16,286 - INFO - Received chunk from Groq:  Product
+2025-09-05 10:47:16,286 - INFO - Received chunk from Groq:  category
+2025-09-05 10:47:16,286 - INFO - Received chunk from Groq:  (
+2025-09-05 10:47:16,287 - INFO - Received chunk from Groq: e
+2025-09-05 10:47:16,287 - INFO - Received chunk from Groq: .g
+2025-09-05 10:47:16,287 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:16,287 - INFO - Received chunk from Groq:  electronics
+2025-09-05 10:47:16,288 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:16,288 - INFO - Received chunk from Groq:  clothing
+2025-09-05 10:47:16,288 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:16,288 - INFO - Received chunk from Groq:  food
+2025-09-05 10:47:16,289 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:16,289 - INFO - Received chunk from Groq:  etc
+2025-09-05 10:47:16,289 - INFO - Received chunk from Groq: .)
+
+2025-09-05 10:47:16,289 - INFO - Received chunk from Groq: 2
+2025-09-05 10:47:16,289 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:16,290 - INFO - Received chunk from Groq:  Brand
+2025-09-05 10:47:16,290 - INFO - Received chunk from Groq:  (
+2025-09-05 10:47:16,290 - INFO - Received chunk from Groq: if
+2025-09-05 10:47:16,291 - INFO - Received chunk from Groq:  applicable
+2025-09-05 10:47:16,291 - INFO - Received chunk from Groq: )
+
+2025-09-05 10:47:16,291 - INFO - Received chunk from Groq: 3
+2025-09-05 10:47:16,292 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:16,292 - INFO - Received chunk from Groq:  Model
+2025-09-05 10:47:16,292 - INFO - Received chunk from Groq:  number
+2025-09-05 10:47:16,293 - INFO - Received chunk from Groq:  or
+2025-09-05 10:47:16,293 - INFO - Received chunk from Groq:  any
+2025-09-05 10:47:16,293 - INFO - Received chunk from Groq:  other
+2025-09-05 10:47:16,293 - INFO - Received chunk from Groq:  relevant
+2025-09-05 10:47:16,294 - INFO - Received chunk from Groq:  identifiers
+2025-09-05 10:47:16,294 - INFO - Received chunk from Groq: 
+
+2025-09-05 10:47:16,294 - INFO - Received chunk from Groq: 4
+2025-09-05 10:47:16,294 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:16,295 - INFO - Received chunk from Groq:  Time
+2025-09-05 10:47:16,295 - INFO - Received chunk from Groq: frame
+2025-09-05 10:47:16,295 - INFO - Received chunk from Groq:  when
+2025-09-05 10:47:16,296 - INFO - Received chunk from Groq:  the
+2025-09-05 10:47:16,296 - INFO - Received chunk from Groq:  product
+2025-09-05 10:47:16,296 - INFO - Received chunk from Groq:  was
+2025-09-05 10:47:16,296 - INFO - Received chunk from Groq:  released
+2025-09-05 10:47:16,297 - INFO - Received chunk from Groq: 
+
+
+2025-09-05 10:47:16,297 - INFO - Received chunk from Groq: With
+2025-09-05 10:47:16,297 - INFO - Received chunk from Groq:  this
+2025-09-05 10:47:16,298 - INFO - Received chunk from Groq:  information
+2025-09-05 10:47:16,298 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:16,298 - INFO - Received chunk from Groq:  I
+2025-09-05 10:47:16,298 - INFO - Received chunk from Groq: 'll
+2025-09-05 10:47:16,303 - INFO - Received chunk from Groq:  do
+2025-09-05 10:47:16,303 - INFO - Received chunk from Groq:  my
+2025-09-05 10:47:16,303 - INFO - Received chunk from Groq:  best
+2025-09-05 10:47:16,304 - INFO - Received chunk from Groq:  to
+2025-09-05 10:47:16,304 - INFO - Received chunk from Groq:  provide
+2025-09-05 10:47:16,304 - INFO - Received chunk from Groq:  you
+2025-09-05 10:47:16,305 - INFO - Received chunk from Groq:  with
+2025-09-05 10:47:16,305 - INFO - Received chunk from Groq:  the
+2025-09-05 10:47:16,305 - INFO - Received chunk from Groq:  original
+2025-09-05 10:47:16,305 - INFO - Received chunk from Groq:  product
+2025-09-05 10:47:16,306 - INFO - Received chunk from Groq:  details
+2025-09-05 10:47:16,306 - INFO - Received chunk from Groq: .
+
+
+2025-09-05 10:47:16,306 - INFO - Received chunk from Groq: If
+2025-09-05 10:47:16,306 - INFO - Received chunk from Groq:  you
+2025-09-05 10:47:16,307 - INFO - Received chunk from Groq:  want
+2025-09-05 10:47:16,307 - INFO - Received chunk from Groq:  some
+2025-09-05 10:47:16,307 - INFO - Received chunk from Groq:  example
+2025-09-05 10:47:16,307 - INFO - Received chunk from Groq:  questions
+2025-09-05 10:47:16,308 - INFO - Received chunk from Groq:  that
+2025-09-05 10:47:16,311 - INFO - Received chunk from Groq:  could
+2025-09-05 10:47:16,314 - INFO - Received chunk from Groq:  help
+2025-09-05 10:47:16,315 - INFO - Received chunk from Groq:  narrow
+2025-09-05 10:47:16,319 - INFO - Received chunk from Groq:  down
+2025-09-05 10:47:16,319 - INFO - Received chunk from Groq:  the
+2025-09-05 10:47:16,319 - INFO - Received chunk from Groq:  search
+2025-09-05 10:47:16,327 - INFO - Received chunk from Groq: :
+
+
+2025-09-05 10:47:16,330 - INFO - Received chunk from Groq: -
+2025-09-05 10:47:16,331 - INFO - Received chunk from Groq:  When
+2025-09-05 10:47:16,336 - INFO - Received chunk from Groq:  was
+2025-09-05 10:47:16,337 - INFO - Received chunk from Groq:  the
+2025-09-05 10:47:16,338 - INFO - Received chunk from Groq:  product
+2025-09-05 10:47:16,339 - INFO - Received chunk from Groq:  released
+2025-09-05 10:47:16,340 - INFO - Received chunk from Groq: ?
+
+2025-09-05 10:47:16,341 - INFO - Received chunk from Groq: -
+2025-09-05 10:47:16,341 - INFO - Received chunk from Groq:  Who
+2025-09-05 10:47:16,342 - INFO - Received chunk from Groq:  was
+2025-09-05 10:47:16,343 - INFO - Received chunk from Groq:  the
+2025-09-05 10:47:16,344 - INFO - Received chunk from Groq:  target
+2025-09-05 10:47:16,345 - INFO - Received chunk from Groq:  audience
+2025-09-05 10:47:16,345 - INFO - Received chunk from Groq:  for
+2025-09-05 10:47:16,347 - INFO - Received chunk from Groq:  this
+2025-09-05 10:47:16,349 - INFO - Received chunk from Groq:  product
+2025-09-05 10:47:16,350 - INFO - Received chunk from Groq: ?
+
+2025-09-05 10:47:16,350 - INFO - Received chunk from Groq: -
+2025-09-05 10:47:16,351 - INFO - Received chunk from Groq:  What
+2025-09-05 10:47:16,351 - INFO - Received chunk from Groq:  were
+2025-09-05 10:47:16,352 - INFO - Received chunk from Groq:  some
+2025-09-05 10:47:16,359 - INFO - Received chunk from Groq:  of
+2025-09-05 10:47:16,359 - INFO - Received chunk from Groq:  its
+2025-09-05 10:47:16,365 - INFO - Received chunk from Groq:  notable
+2025-09-05 10:47:16,368 - INFO - Received chunk from Groq:  features
+2025-09-05 10:47:16,369 - INFO - Received chunk from Groq: ?
+
+2025-09-05 10:47:16,374 - INFO - Received chunk from Groq: -
+2025-09-05 10:47:16,375 - INFO - Received chunk from Groq:  Was
+2025-09-05 10:47:16,377 - INFO - Received chunk from Groq:  it
+2025-09-05 10:47:16,377 - INFO - Received chunk from Groq:  a
+2025-09-05 10:47:16,378 - INFO - Received chunk from Groq:  revolutionary
+2025-09-05 10:47:16,381 - INFO - Received chunk from Groq:  product
+2025-09-05 10:47:16,382 - INFO - Received chunk from Groq:  in
+2025-09-05 10:47:16,388 - INFO - Received chunk from Groq:  its
+2025-09-05 10:47:16,388 - INFO - Received chunk from Groq:  market
+2025-09-05 10:47:16,391 - INFO - Received chunk from Groq: ?
+
+2025-09-05 10:47:16,396 - INFO - Received chunk from Groq: -
+2025-09-05 10:47:16,396 - INFO - Received chunk from Groq:  Was
+2025-09-05 10:47:16,400 - INFO - Received chunk from Groq:  it
+2025-09-05 10:47:16,400 - INFO - Received chunk from Groq:  a
+2025-09-05 10:47:16,407 - INFO - Received chunk from Groq:  mass
+2025-09-05 10:47:16,409 - INFO - Received chunk from Groq: -market
+2025-09-05 10:47:16,413 - INFO - Received chunk from Groq:  product
+2025-09-05 10:47:16,413 - INFO - Received chunk from Groq:  or
+2025-09-05 10:47:16,414 - INFO - Received chunk from Groq:  more
+2025-09-05 10:47:16,422 - INFO - Received chunk from Groq:  exclusive
+2025-09-05 10:47:16,460 - INFO - Received chunk from Groq: ?
+
+
+2025-09-05 10:47:16,461 - INFO - Received chunk from Groq: Let
+2025-09-05 10:47:16,462 - INFO - Received chunk from Groq: 's
+2025-09-05 10:47:16,462 - INFO - Received chunk from Groq:  work
+2025-09-05 10:47:16,463 - INFO - Received chunk from Groq:  through
+2025-09-05 10:47:16,464 - INFO - Received chunk from Groq:  this
+2025-09-05 10:47:16,464 - INFO - Received chunk from Groq:  together
+2025-09-05 10:47:16,465 - INFO - Received chunk from Groq:  to
+2025-09-05 10:47:16,465 - INFO - Received chunk from Groq:  find
+2025-09-05 10:47:16,466 - INFO - Received chunk from Groq:  the
+2025-09-05 10:47:16,466 - INFO - Received chunk from Groq:  product
+2025-09-05 10:47:16,466 - INFO - Received chunk from Groq:  details
+2025-09-05 10:47:16,467 - INFO - Received chunk from Groq:  you
+2025-09-05 10:47:16,467 - INFO - Received chunk from Groq: 're
+2025-09-05 10:47:16,468 - INFO - Received chunk from Groq:  looking
+2025-09-05 10:47:16,468 - INFO - Received chunk from Groq:  for
+2025-09-05 10:47:16,468 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:16,469 - INFO - Received chunk from Groq: 
+2025-09-05 10:47:45,097 - INFO - Sending messages to Groq: [{'role': 'user', 'content': 'Samsung QN90B Neo QLED TV'}]
+2025-09-05 10:47:45,355 - INFO - Received chunk from Groq: 
+2025-09-05 10:47:45,400 - INFO - Received chunk from Groq: The
+2025-09-05 10:47:45,401 - INFO - Received chunk from Groq:  Samsung
+2025-09-05 10:47:45,402 - INFO - Received chunk from Groq:  Q
+2025-09-05 10:47:45,402 - INFO - Received chunk from Groq: N
+2025-09-05 10:47:45,403 - INFO - Received chunk from Groq: 90
+2025-09-05 10:47:45,403 - INFO - Received chunk from Groq: B
+2025-09-05 10:47:45,404 - INFO - Received chunk from Groq:  Neo
+2025-09-05 10:47:45,404 - INFO - Received chunk from Groq:  Q
+2025-09-05 10:47:45,404 - INFO - Received chunk from Groq: LED
+2025-09-05 10:47:45,405 - INFO - Received chunk from Groq:  TV
+2025-09-05 10:47:45,406 - INFO - Received chunk from Groq:  is
+2025-09-05 10:47:45,406 - INFO - Received chunk from Groq:  a
+2025-09-05 10:47:45,407 - INFO - Received chunk from Groq:  high
+2025-09-05 10:47:45,407 - INFO - Received chunk from Groq: -end
+2025-09-05 10:47:45,408 - INFO - Received chunk from Groq:  television
+2025-09-05 10:47:45,410 - INFO - Received chunk from Groq:  model
+2025-09-05 10:47:45,410 - INFO - Received chunk from Groq:  released
+2025-09-05 10:47:45,415 - INFO - Received chunk from Groq:  by
+2025-09-05 10:47:45,416 - INFO - Received chunk from Groq:  Samsung
+2025-09-05 10:47:45,419 - INFO - Received chunk from Groq:  in
+2025-09-05 10:47:45,420 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:45,420 - INFO - Received chunk from Groq: 202
+2025-09-05 10:47:45,421 - INFO - Received chunk from Groq: 2
+2025-09-05 10:47:45,421 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:45,421 - INFO - Received chunk from Groq:  Here
+2025-09-05 10:47:45,422 - INFO - Received chunk from Groq:  are
+2025-09-05 10:47:45,422 - INFO - Received chunk from Groq:  some
+2025-09-05 10:47:45,422 - INFO - Received chunk from Groq:  of
+2025-09-05 10:47:45,426 - INFO - Received chunk from Groq:  its
+2025-09-05 10:47:45,427 - INFO - Received chunk from Groq:  key
+2025-09-05 10:47:45,429 - INFO - Received chunk from Groq:  features
+2025-09-05 10:47:45,429 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:45,436 - INFO - Received chunk from Groq:  specifications
+2025-09-05 10:47:45,437 - INFO - Received chunk from Groq: :
+
+
+2025-09-05 10:47:45,437 - INFO - Received chunk from Groq: **
+2025-09-05 10:47:45,437 - INFO - Received chunk from Groq: Key
+2025-09-05 10:47:45,438 - INFO - Received chunk from Groq:  Features
+2025-09-05 10:47:45,438 - INFO - Received chunk from Groq: :
+2025-09-05 10:47:45,438 - INFO - Received chunk from Groq: **
+
+
+2025-09-05 10:47:45,438 - INFO - Received chunk from Groq: 1
+2025-09-05 10:47:45,439 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:45,439 - INFO - Received chunk from Groq:  **
+2025-09-05 10:47:45,439 - INFO - Received chunk from Groq: Neo
+2025-09-05 10:47:45,442 - INFO - Received chunk from Groq:  Q
+2025-09-05 10:47:45,442 - INFO - Received chunk from Groq: LED
+2025-09-05 10:47:45,443 - INFO - Received chunk from Groq:  Panel
+2025-09-05 10:47:45,452 - INFO - Received chunk from Groq: **:
+2025-09-05 10:47:45,452 - INFO - Received chunk from Groq:  The
+2025-09-05 10:47:45,453 - INFO - Received chunk from Groq:  Q
+2025-09-05 10:47:45,454 - INFO - Received chunk from Groq: N
+2025-09-05 10:47:45,455 - INFO - Received chunk from Groq: 90
+2025-09-05 10:47:45,455 - INFO - Received chunk from Groq: B
+2025-09-05 10:47:45,455 - INFO - Received chunk from Groq:  features
+2025-09-05 10:47:45,456 - INFO - Received chunk from Groq:  Samsung
+2025-09-05 10:47:45,456 - INFO - Received chunk from Groq: 's
+2025-09-05 10:47:45,460 - INFO - Received chunk from Groq:  latest
+2025-09-05 10:47:45,462 - INFO - Received chunk from Groq:  Neo
+2025-09-05 10:47:45,462 - INFO - Received chunk from Groq:  Q
+2025-09-05 10:47:45,466 - INFO - Received chunk from Groq: LED
+2025-09-05 10:47:45,467 - INFO - Received chunk from Groq:  panel
+2025-09-05 10:47:45,467 - INFO - Received chunk from Groq:  technology
+2025-09-05 10:47:45,467 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:45,467 - INFO - Received chunk from Groq:  which
+2025-09-05 10:47:45,468 - INFO - Received chunk from Groq:  uses
+2025-09-05 10:47:45,473 - INFO - Received chunk from Groq:  a
+2025-09-05 10:47:45,477 - INFO - Received chunk from Groq:  combination
+2025-09-05 10:47:45,477 - INFO - Received chunk from Groq:  of
+2025-09-05 10:47:45,478 - INFO - Received chunk from Groq:  mic
+2025-09-05 10:47:45,484 - INFO - Received chunk from Groq: rol
+2025-09-05 10:47:45,488 - INFO - Received chunk from Groq: ab
+2025-09-05 10:47:45,495 - INFO - Received chunk from Groq: ors
+2025-09-05 10:47:45,499 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:45,500 - INFO - Received chunk from Groq:  a
+2025-09-05 10:47:45,503 - INFO - Received chunk from Groq:  new
+2025-09-05 10:47:45,507 - INFO - Received chunk from Groq:  type
+2025-09-05 10:47:45,508 - INFO - Received chunk from Groq:  of
+2025-09-05 10:47:45,508 - INFO - Received chunk from Groq:  quantum
+2025-09-05 10:47:45,508 - INFO - Received chunk from Groq:  dot
+2025-09-05 10:47:45,509 - INFO - Received chunk from Groq:  to
+2025-09-05 10:47:45,516 - INFO - Received chunk from Groq:  produce
+2025-09-05 10:47:45,516 - INFO - Received chunk from Groq:  more
+2025-09-05 10:47:45,527 - INFO - Received chunk from Groq:  accurate
+2025-09-05 10:47:45,528 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:45,528 - INFO - Received chunk from Groq:  lif
+2025-09-05 10:47:45,528 - INFO - Received chunk from Groq: el
+2025-09-05 10:47:45,529 - INFO - Received chunk from Groq: ike
+2025-09-05 10:47:45,529 - INFO - Received chunk from Groq:  colors
+2025-09-05 10:47:45,529 - INFO - Received chunk from Groq: .
+
+2025-09-05 10:47:45,530 - INFO - Received chunk from Groq: 2
+2025-09-05 10:47:45,530 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:45,530 - INFO - Received chunk from Groq:  **
+2025-09-05 10:47:45,530 - INFO - Received chunk from Groq: Min
+2025-09-05 10:47:45,535 - INFO - Received chunk from Groq: imized
+2025-09-05 10:47:45,551 - INFO - Received chunk from Groq:  Blind
+2025-09-05 10:47:45,551 - INFO - Received chunk from Groq:  Spot
+2025-09-05 10:47:45,552 - INFO - Received chunk from Groq:  Zone
+2025-09-05 10:47:45,552 - INFO - Received chunk from Groq: **:
+2025-09-05 10:47:45,556 - INFO - Received chunk from Groq:  This
+2025-09-05 10:47:45,558 - INFO - Received chunk from Groq:  technology
+2025-09-05 10:47:45,561 - INFO - Received chunk from Groq:  helps
+2025-09-05 10:47:45,562 - INFO - Received chunk from Groq:  to
+2025-09-05 10:47:45,562 - INFO - Received chunk from Groq:  eliminate
+2025-09-05 10:47:45,567 - INFO - Received chunk from Groq:  blind
+2025-09-05 10:47:45,570 - INFO - Received chunk from Groq:  spot
+2025-09-05 10:47:45,573 - INFO - Received chunk from Groq:  areas
+2025-09-05 10:47:45,574 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:45,580 - INFO - Received chunk from Groq:  resulting
+2025-09-05 10:47:45,586 - INFO - Received chunk from Groq:  in
+2025-09-05 10:47:45,586 - INFO - Received chunk from Groq:  a
+2025-09-05 10:47:45,587 - INFO - Received chunk from Groq:  more
+2025-09-05 10:47:45,587 - INFO - Received chunk from Groq:  immersive
+2025-09-05 10:47:45,588 - INFO - Received chunk from Groq:  viewing
+2025-09-05 10:47:45,588 - INFO - Received chunk from Groq:  experience
+2025-09-05 10:47:45,589 - INFO - Received chunk from Groq: .
+
+2025-09-05 10:47:45,589 - INFO - Received chunk from Groq: 3
+2025-09-05 10:47:45,593 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:45,593 - INFO - Received chunk from Groq:  **
+2025-09-05 10:47:45,596 - INFO - Received chunk from Groq: Quant
+2025-09-05 10:47:45,596 - INFO - Received chunk from Groq: um
+2025-09-05 10:47:45,597 - INFO - Received chunk from Groq:  LED
+2025-09-05 10:47:45,601 - INFO - Received chunk from Groq:  backlight
+2025-09-05 10:47:45,606 - INFO - Received chunk from Groq: ing
+2025-09-05 10:47:45,608 - INFO - Received chunk from Groq: **:
+2025-09-05 10:47:45,609 - INFO - Received chunk from Groq:  The
+2025-09-05 10:47:45,610 - INFO - Received chunk from Groq:  TV
+2025-09-05 10:47:45,617 - INFO - Received chunk from Groq:  uses
+2025-09-05 10:47:45,618 - INFO - Received chunk from Groq:  a
+2025-09-05 10:47:45,618 - INFO - Received chunk from Groq:  precise
+2025-09-05 10:47:45,619 - INFO - Received chunk from Groq:  quantum
+2025-09-05 10:47:45,631 - INFO - Received chunk from Groq:  dot
+2025-09-05 10:47:45,632 - INFO - Received chunk from Groq:  matrix
+2025-09-05 10:47:45,632 - INFO - Received chunk from Groq:  that
+2025-09-05 10:47:45,636 - INFO - Received chunk from Groq:  helps
+2025-09-05 10:47:45,639 - INFO - Received chunk from Groq:  to
+2025-09-05 10:47:45,639 - INFO - Received chunk from Groq:  enhance
+2025-09-05 10:47:45,644 - INFO - Received chunk from Groq:  brightness
+2025-09-05 10:47:45,652 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:45,653 - INFO - Received chunk from Groq:  color
+2025-09-05 10:47:45,653 - INFO - Received chunk from Groq:  accuracy
+2025-09-05 10:47:45,654 - INFO - Received chunk from Groq: .
+
+2025-09-05 10:47:45,654 - INFO - Received chunk from Groq: 4
+2025-09-05 10:47:45,655 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:45,655 - INFO - Received chunk from Groq:  **
+2025-09-05 10:47:45,655 - INFO - Received chunk from Groq: 4
+2025-09-05 10:47:45,664 - INFO - Received chunk from Groq: K
+2025-09-05 10:47:45,665 - INFO - Received chunk from Groq:  Resolution
+2025-09-05 10:47:45,665 - INFO - Received chunk from Groq: **:
+2025-09-05 10:47:45,666 - INFO - Received chunk from Groq:  The
+2025-09-05 10:47:45,666 - INFO - Received chunk from Groq:  Q
+2025-09-05 10:47:45,666 - INFO - Received chunk from Groq: N
+2025-09-05 10:47:45,667 - INFO - Received chunk from Groq: 90
+2025-09-05 10:47:45,667 - INFO - Received chunk from Groq: B
+2025-09-05 10:47:45,667 - INFO - Received chunk from Groq:  supports
+2025-09-05 10:47:45,668 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:45,668 - INFO - Received chunk from Groq: 4
+2025-09-05 10:47:45,668 - INFO - Received chunk from Groq: K
+2025-09-05 10:47:45,668 - INFO - Received chunk from Groq:  resolution
+2025-09-05 10:47:45,669 - INFO - Received chunk from Groq:  (
+2025-09-05 10:47:45,670 - INFO - Received chunk from Groq: 384
+2025-09-05 10:47:45,670 - INFO - Received chunk from Groq: 0
+2025-09-05 10:47:45,671 - INFO - Received chunk from Groq:  x
+2025-09-05 10:47:45,671 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:45,671 - INFO - Received chunk from Groq: 216
+2025-09-05 10:47:45,672 - INFO - Received chunk from Groq: 0
+2025-09-05 10:47:45,673 - INFO - Received chunk from Groq: )
+2025-09-05 10:47:45,680 - INFO - Received chunk from Groq:  for
+2025-09-05 10:47:45,680 - INFO - Received chunk from Groq:  smooth
+2025-09-05 10:47:45,683 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:45,684 - INFO - Received chunk from Groq:  detailed
+2025-09-05 10:47:45,685 - INFO - Received chunk from Groq:  picture
+2025-09-05 10:47:45,688 - INFO - Received chunk from Groq:  quality
+2025-09-05 10:47:45,689 - INFO - Received chunk from Groq: .
+
+2025-09-05 10:47:45,690 - INFO - Received chunk from Groq: 5
+2025-09-05 10:47:45,690 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:45,691 - INFO - Received chunk from Groq:  **
+2025-09-05 10:47:45,691 - INFO - Received chunk from Groq: HDR
+2025-09-05 10:47:45,692 - INFO - Received chunk from Groq:  Support
+2025-09-05 10:47:45,693 - INFO - Received chunk from Groq: **:
+2025-09-05 10:47:45,694 - INFO - Received chunk from Groq:  The
+2025-09-05 10:47:45,694 - INFO - Received chunk from Groq:  TV
+2025-09-05 10:47:45,696 - INFO - Received chunk from Groq:  is
+2025-09-05 10:47:45,699 - INFO - Received chunk from Groq:  compatible
+2025-09-05 10:47:45,699 - INFO - Received chunk from Groq:  with
+2025-09-05 10:47:45,700 - INFO - Received chunk from Groq:  various
+2025-09-05 10:47:45,701 - INFO - Received chunk from Groq:  HDR
+2025-09-05 10:47:45,701 - INFO - Received chunk from Groq:  formats
+2025-09-05 10:47:45,702 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:45,702 - INFO - Received chunk from Groq:  including
+2025-09-05 10:47:45,703 - INFO - Received chunk from Groq:  HDR
+2025-09-05 10:47:45,704 - INFO - Received chunk from Groq: 10
+2025-09-05 10:47:45,705 - INFO - Received chunk from Groq: +,
+2025-09-05 10:47:45,716 - INFO - Received chunk from Groq:  HDR
+2025-09-05 10:47:45,716 - INFO - Received chunk from Groq: 10
+2025-09-05 10:47:45,717 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:45,717 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:45,717 - INFO - Received chunk from Groq:  H
+2025-09-05 10:47:45,724 - INFO - Received chunk from Groq: LG
+2025-09-05 10:47:45,725 - INFO - Received chunk from Groq:  (
+2025-09-05 10:47:45,725 - INFO - Received chunk from Groq: Hy
+2025-09-05 10:47:45,725 - INFO - Received chunk from Groq: brid
+2025-09-05 10:47:45,726 - INFO - Received chunk from Groq:  Log
+2025-09-05 10:47:45,726 - INFO - Received chunk from Groq: -G
+2025-09-05 10:47:45,726 - INFO - Received chunk from Groq: amma
+2025-09-05 10:47:45,726 - INFO - Received chunk from Groq: ).
+
+2025-09-05 10:47:45,727 - INFO - Received chunk from Groq: 6
+2025-09-05 10:47:45,727 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:45,730 - INFO - Received chunk from Groq:  **
+2025-09-05 10:47:45,731 - INFO - Received chunk from Groq: D
+2025-09-05 10:47:45,736 - INFO - Received chunk from Groq: ol
+2025-09-05 10:47:45,737 - INFO - Received chunk from Groq: by
+2025-09-05 10:47:45,737 - INFO - Received chunk from Groq:  Atmos
+2025-09-05 10:47:45,743 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:45,743 - INFO - Received chunk from Groq:  D
+2025-09-05 10:47:45,744 - INFO - Received chunk from Groq: TS
+2025-09-05 10:47:45,744 - INFO - Received chunk from Groq: :X
+2025-09-05 10:47:45,745 - INFO - Received chunk from Groq: **:
+2025-09-05 10:47:45,751 - INFO - Received chunk from Groq:  The
+2025-09-05 10:47:45,752 - INFO - Received chunk from Groq:  Q
+2025-09-05 10:47:45,752 - INFO - Received chunk from Groq: N
+2025-09-05 10:47:45,752 - INFO - Received chunk from Groq: 90
+2025-09-05 10:47:45,753 - INFO - Received chunk from Groq: B
+2025-09-05 10:47:45,753 - INFO - Received chunk from Groq:  supports
+2025-09-05 10:47:45,753 - INFO - Received chunk from Groq:  immersive
+2025-09-05 10:47:45,754 - INFO - Received chunk from Groq:  audio
+2025-09-05 10:47:45,754 - INFO - Received chunk from Groq:  formats
+2025-09-05 10:47:45,758 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:45,758 - INFO - Received chunk from Groq:  such
+2025-09-05 10:47:45,759 - INFO - Received chunk from Groq:  as
+2025-09-05 10:47:45,760 - INFO - Received chunk from Groq:  Dol
+2025-09-05 10:47:45,762 - INFO - Received chunk from Groq: by
+2025-09-05 10:47:45,762 - INFO - Received chunk from Groq:  Atmos
+2025-09-05 10:47:45,763 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:45,763 - INFO - Received chunk from Groq:  D
+2025-09-05 10:47:45,764 - INFO - Received chunk from Groq: TS
+2025-09-05 10:47:45,765 - INFO - Received chunk from Groq: :X
+2025-09-05 10:47:45,766 - INFO - Received chunk from Groq: .
+
+2025-09-05 10:47:45,767 - INFO - Received chunk from Groq: 7
+2025-09-05 10:47:45,767 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:45,768 - INFO - Received chunk from Groq:  **
+2025-09-05 10:47:45,768 - INFO - Received chunk from Groq: Wide
+2025-09-05 10:47:45,774 - INFO - Received chunk from Groq:  Color
+2025-09-05 10:47:45,775 - INFO - Received chunk from Groq:  Gam
+2025-09-05 10:47:45,775 - INFO - Received chunk from Groq: ut
+2025-09-05 10:47:45,776 - INFO - Received chunk from Groq: **:
+2025-09-05 10:47:45,777 - INFO - Received chunk from Groq:  The
+2025-09-05 10:47:45,777 - INFO - Received chunk from Groq:  TV
+2025-09-05 10:47:45,778 - INFO - Received chunk from Groq: 's
+2025-09-05 10:47:45,780 - INFO - Received chunk from Groq:  color
+2025-09-05 10:47:45,783 - INFO - Received chunk from Groq:  gam
+2025-09-05 10:47:45,784 - INFO - Received chunk from Groq: ut
+2025-09-05 10:47:45,785 - INFO - Received chunk from Groq:  is
+2025-09-05 10:47:45,786 - INFO - Received chunk from Groq:  quite
+2025-09-05 10:47:45,798 - INFO - Received chunk from Groq:  wide
+2025-09-05 10:47:45,799 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:45,800 - INFO - Received chunk from Groq:  offering
+2025-09-05 10:47:45,801 - INFO - Received chunk from Groq:  more
+2025-09-05 10:47:45,802 - INFO - Received chunk from Groq:  vivid
+2025-09-05 10:47:45,805 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:45,805 - INFO - Received chunk from Groq:  lif
+2025-09-05 10:47:45,807 - INFO - Received chunk from Groq: el
+2025-09-05 10:47:45,808 - INFO - Received chunk from Groq: ike
+2025-09-05 10:47:45,809 - INFO - Received chunk from Groq:  colors
+2025-09-05 10:47:45,809 - INFO - Received chunk from Groq: .
+
+2025-09-05 10:47:45,810 - INFO - Received chunk from Groq: 8
+2025-09-05 10:47:45,810 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:45,811 - INFO - Received chunk from Groq:  **
+2025-09-05 10:47:45,811 - INFO - Received chunk from Groq: Motion
+2025-09-05 10:47:45,816 - INFO - Received chunk from Groq:  Rate
+2025-09-05 10:47:45,817 - INFO - Received chunk from Groq: **:
+2025-09-05 10:47:45,820 - INFO - Received chunk from Groq:  The
+2025-09-05 10:47:45,821 - INFO - Received chunk from Groq:  Q
+2025-09-05 10:47:45,822 - INFO - Received chunk from Groq: N
+2025-09-05 10:47:45,822 - INFO - Received chunk from Groq: 90
+2025-09-05 10:47:45,823 - INFO - Received chunk from Groq: B
+2025-09-05 10:47:45,823 - INFO - Received chunk from Groq:  has
+2025-09-05 10:47:45,826 - INFO - Received chunk from Groq:  a
+2025-09-05 10:47:45,827 - INFO - Received chunk from Groq:  Motion
+2025-09-05 10:47:45,831 - INFO - Received chunk from Groq:  Rate
+2025-09-05 10:47:45,832 - INFO - Received chunk from Groq:  of
+2025-09-05 10:47:45,832 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:45,833 - INFO - Received chunk from Groq: 200
+2025-09-05 10:47:45,841 - INFO - Received chunk from Groq: 0
+2025-09-05 10:47:45,841 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:45,841 - INFO - Received chunk from Groq:  which
+2025-09-05 10:47:45,842 - INFO - Received chunk from Groq:  helps
+2025-09-05 10:47:45,842 - INFO - Received chunk from Groq:  to
+2025-09-05 10:47:45,842 - INFO - Received chunk from Groq:  reduce
+2025-09-05 10:47:45,843 - INFO - Received chunk from Groq:  motion
+2025-09-05 10:47:45,843 - INFO - Received chunk from Groq:  lag
+2025-09-05 10:47:45,849 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:45,850 - INFO - Received chunk from Groq:  blur
+2025-09-05 10:47:45,853 - INFO - Received chunk from Groq: .
+
+2025-09-05 10:47:45,868 - INFO - Received chunk from Groq: 9
+2025-09-05 10:47:45,868 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:45,869 - INFO - Received chunk from Groq:  **
+2025-09-05 10:47:45,869 - INFO - Received chunk from Groq: Smart
+2025-09-05 10:47:45,870 - INFO - Received chunk from Groq: Things
+2025-09-05 10:47:45,870 - INFO - Received chunk from Groq:  TV
+2025-09-05 10:47:45,871 - INFO - Received chunk from Groq: **:
+2025-09-05 10:47:45,871 - INFO - Received chunk from Groq:  The
+2025-09-05 10:47:45,871 - INFO - Received chunk from Groq:  TV
+2025-09-05 10:47:45,872 - INFO - Received chunk from Groq:  runs
+2025-09-05 10:47:45,872 - INFO - Received chunk from Groq:  on
+2025-09-05 10:47:45,872 - INFO - Received chunk from Groq:  Smart
+2025-09-05 10:47:45,876 - INFO - Received chunk from Groq: Things
+2025-09-05 10:47:45,876 - INFO - Received chunk from Groq:  TV
+2025-09-05 10:47:45,879 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:45,879 - INFO - Received chunk from Groq:  which
+2025-09-05 10:47:45,881 - INFO - Received chunk from Groq:  offers
+2025-09-05 10:47:45,885 - INFO - Received chunk from Groq:  a
+2025-09-05 10:47:45,886 - INFO - Received chunk from Groq:  range
+2025-09-05 10:47:45,886 - INFO - Received chunk from Groq:  of
+2025-09-05 10:47:45,887 - INFO - Received chunk from Groq:  features
+2025-09-05 10:47:45,887 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:45,890 - INFO - Received chunk from Groq:  services
+2025-09-05 10:47:45,894 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:45,895 - INFO - Received chunk from Groq:  including
+2025-09-05 10:47:45,896 - INFO - Received chunk from Groq:  B
+2025-09-05 10:47:45,902 - INFO - Received chunk from Groq: ix
+2025-09-05 10:47:45,903 - INFO - Received chunk from Groq: by
+2025-09-05 10:47:45,903 - INFO - Received chunk from Groq:  voice
+2025-09-05 10:47:45,908 - INFO - Received chunk from Groq:  assistant
+2025-09-05 10:47:45,909 - INFO - Received chunk from Groq: .
+
+
+2025-09-05 10:47:45,913 - INFO - Received chunk from Groq: **
+2025-09-05 10:47:45,913 - INFO - Received chunk from Groq: Specifications
+2025-09-05 10:47:45,914 - INFO - Received chunk from Groq: :
+2025-09-05 10:47:45,914 - INFO - Received chunk from Groq: **
+
+
+2025-09-05 10:47:45,914 - INFO - Received chunk from Groq: 1
+2025-09-05 10:47:45,915 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:45,915 - INFO - Received chunk from Groq:  **
+2025-09-05 10:47:45,915 - INFO - Received chunk from Groq: Display
+2025-09-05 10:47:45,921 - INFO - Received chunk from Groq:  Panel
+2025-09-05 10:47:45,926 - INFO - Received chunk from Groq:  Size
+2025-09-05 10:47:45,933 - INFO - Received chunk from Groq: **:
+2025-09-05 10:47:45,933 - INFO - Received chunk from Groq:  Available
+2025-09-05 10:47:45,937 - INFO - Received chunk from Groq:  in
+2025-09-05 10:47:45,938 - INFO - Received chunk from Groq:  various
+2025-09-05 10:47:45,940 - INFO - Received chunk from Groq:  sizes
+2025-09-05 10:47:45,940 - INFO - Received chunk from Groq:  (
+2025-09-05 10:47:45,944 - INFO - Received chunk from Groq: 50
+2025-09-05 10:47:45,950 - INFO - Received chunk from Groq: ",
+2025-09-05 10:47:45,950 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:45,951 - INFO - Received chunk from Groq: 55
+2025-09-05 10:47:45,951 - INFO - Received chunk from Groq: ",
+2025-09-05 10:47:45,952 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:45,953 - INFO - Received chunk from Groq: 65
+2025-09-05 10:47:45,953 - INFO - Received chunk from Groq: ",
+2025-09-05 10:47:45,953 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:45,955 - INFO - Received chunk from Groq: 75
+2025-09-05 10:47:45,955 - INFO - Received chunk from Groq: ",
+2025-09-05 10:47:45,956 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:45,959 - INFO - Received chunk from Groq: 85
+2025-09-05 10:47:45,959 - INFO - Received chunk from Groq: ",
+2025-09-05 10:47:45,967 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:45,967 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:45,968 - INFO - Received chunk from Groq: 95
+2025-09-05 10:47:45,968 - INFO - Received chunk from Groq: "
+2025-09-05 10:47:45,971 - INFO - Received chunk from Groq:  inches
+2025-09-05 10:47:45,976 - INFO - Received chunk from Groq: )
+
+2025-09-05 10:47:45,977 - INFO - Received chunk from Groq: 2
+2025-09-05 10:47:45,977 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:45,977 - INFO - Received chunk from Groq:  **
+2025-09-05 10:47:45,978 - INFO - Received chunk from Groq: Resolution
+2025-09-05 10:47:45,978 - INFO - Received chunk from Groq: **:
+2025-09-05 10:47:45,978 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:45,979 - INFO - Received chunk from Groq: 4
+2025-09-05 10:47:45,980 - INFO - Received chunk from Groq: K
+2025-09-05 10:47:45,981 - INFO - Received chunk from Groq:  U
+2025-09-05 10:47:45,985 - INFO - Received chunk from Groq: HD
+2025-09-05 10:47:45,985 - INFO - Received chunk from Groq:  (
+2025-09-05 10:47:45,986 - INFO - Received chunk from Groq: 384
+2025-09-05 10:47:45,986 - INFO - Received chunk from Groq: 0
+2025-09-05 10:47:45,987 - INFO - Received chunk from Groq:  x
+2025-09-05 10:47:45,987 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:45,988 - INFO - Received chunk from Groq: 216
+2025-09-05 10:47:45,988 - INFO - Received chunk from Groq: 0
+2025-09-05 10:47:45,995 - INFO - Received chunk from Groq: )
+
+2025-09-05 10:47:45,998 - INFO - Received chunk from Groq: 3
+2025-09-05 10:47:45,999 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:45,999 - INFO - Received chunk from Groq:  **
+2025-09-05 10:47:45,999 - INFO - Received chunk from Groq: HDR
+2025-09-05 10:47:46,002 - INFO - Received chunk from Groq:  Support
+2025-09-05 10:47:46,002 - INFO - Received chunk from Groq: **:
+2025-09-05 10:47:46,003 - INFO - Received chunk from Groq:  HDR
+2025-09-05 10:47:46,003 - INFO - Received chunk from Groq: 10
+2025-09-05 10:47:46,004 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,008 - INFO - Received chunk from Groq:  HDR
+2025-09-05 10:47:46,008 - INFO - Received chunk from Groq: 10
+2025-09-05 10:47:46,008 - INFO - Received chunk from Groq: +,
+2025-09-05 10:47:46,009 - INFO - Received chunk from Groq:  H
+2025-09-05 10:47:46,018 - INFO - Received chunk from Groq: LG
+2025-09-05 10:47:46,018 - INFO - Received chunk from Groq: 
+
+2025-09-05 10:47:46,018 - INFO - Received chunk from Groq: 4
+2025-09-05 10:47:46,019 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:46,019 - INFO - Received chunk from Groq:  **
+2025-09-05 10:47:46,020 - INFO - Received chunk from Groq: Refresh
+2025-09-05 10:47:46,020 - INFO - Received chunk from Groq:  Rate
+2025-09-05 10:47:46,020 - INFO - Received chunk from Groq: **:
+2025-09-05 10:47:46,021 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:46,021 - INFO - Received chunk from Groq: 120
+2025-09-05 10:47:46,026 - INFO - Received chunk from Groq: Hz
+2025-09-05 10:47:46,027 - INFO - Received chunk from Groq:  (
+2025-09-05 10:47:46,027 - INFO - Received chunk from Groq: Motion
+2025-09-05 10:47:46,031 - INFO - Received chunk from Groq:  Rate
+2025-09-05 10:47:46,031 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:46,031 - INFO - Received chunk from Groq: 200
+2025-09-05 10:47:46,032 - INFO - Received chunk from Groq: 0
+2025-09-05 10:47:46,032 - INFO - Received chunk from Groq: )
+
+2025-09-05 10:47:46,032 - INFO - Received chunk from Groq: 5
+2025-09-05 10:47:46,033 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:46,033 - INFO - Received chunk from Groq:  **
+2025-09-05 10:47:46,037 - INFO - Received chunk from Groq: R
+2025-09-05 10:47:46,045 - INFO - Received chunk from Groq: MS
+2025-09-05 10:47:46,045 - INFO - Received chunk from Groq:  Power
+2025-09-05 10:47:46,046 - INFO - Received chunk from Groq:  Output
+2025-09-05 10:47:46,046 - INFO - Received chunk from Groq: **:
+2025-09-05 10:47:46,046 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:46,047 - INFO - Received chunk from Groq: 40
+2025-09-05 10:47:46,050 - INFO - Received chunk from Groq: W
+2025-09-05 10:47:46,050 - INFO - Received chunk from Groq:  (
+2025-09-05 10:47:46,059 - INFO - Received chunk from Groq: 2
+2025-09-05 10:47:46,062 - INFO - Received chunk from Groq: x
+2025-09-05 10:47:46,065 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:46,066 - INFO - Received chunk from Groq: 20
+2025-09-05 10:47:46,066 - INFO - Received chunk from Groq: W
+2025-09-05 10:47:46,067 - INFO - Received chunk from Groq:  speakers
+2025-09-05 10:47:46,071 - INFO - Received chunk from Groq: )
+
+2025-09-05 10:47:46,072 - INFO - Received chunk from Groq: 6
+2025-09-05 10:47:46,073 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:46,074 - INFO - Received chunk from Groq:  **
+2025-09-05 10:47:46,075 - INFO - Received chunk from Groq: Connect
+2025-09-05 10:47:46,075 - INFO - Received chunk from Groq: ivity
+2025-09-05 10:47:46,076 - INFO - Received chunk from Groq: **:
+2025-09-05 10:47:46,076 - INFO - Received chunk from Groq:  HDMI
+2025-09-05 10:47:46,082 - INFO - Received chunk from Groq:  (
+2025-09-05 10:47:46,085 - INFO - Received chunk from Groq: 4
+2025-09-05 10:47:46,093 - INFO - Received chunk from Groq: x
+2025-09-05 10:47:46,096 - INFO - Received chunk from Groq:  HDMI
+2025-09-05 10:47:46,101 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:46,102 - INFO - Received chunk from Groq: 2
+2025-09-05 10:47:46,102 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:46,103 - INFO - Received chunk from Groq: 1
+2025-09-05 10:47:46,103 - INFO - Received chunk from Groq: ),
+2025-09-05 10:47:46,103 - INFO - Received chunk from Groq:  USB
+2025-09-05 10:47:46,104 - INFO - Received chunk from Groq:  (
+2025-09-05 10:47:46,104 - INFO - Received chunk from Groq: 3
+2025-09-05 10:47:46,111 - INFO - Received chunk from Groq: x
+2025-09-05 10:47:46,111 - INFO - Received chunk from Groq:  USB
+2025-09-05 10:47:46,112 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:46,113 - INFO - Received chunk from Groq: 2
+2025-09-05 10:47:46,116 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:46,116 - INFO - Received chunk from Groq: 0
+2025-09-05 10:47:46,117 - INFO - Received chunk from Groq: ),
+2025-09-05 10:47:46,118 - INFO - Received chunk from Groq:  Wi
+2025-09-05 10:47:46,118 - INFO - Received chunk from Groq: -Fi
+2025-09-05 10:47:46,119 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,126 - INFO - Received chunk from Groq:  Bluetooth
+2025-09-05 10:47:46,127 - INFO - Received chunk from Groq: 
+
+2025-09-05 10:47:46,130 - INFO - Received chunk from Groq: 7
+2025-09-05 10:47:46,130 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:46,131 - INFO - Received chunk from Groq:  **
+2025-09-05 10:47:46,131 - INFO - Received chunk from Groq: Smart
+2025-09-05 10:47:46,133 - INFO - Received chunk from Groq:  TV
+2025-09-05 10:47:46,137 - INFO - Received chunk from Groq:  Platform
+2025-09-05 10:47:46,141 - INFO - Received chunk from Groq: **:
+2025-09-05 10:47:46,141 - INFO - Received chunk from Groq:  Smart
+2025-09-05 10:47:46,142 - INFO - Received chunk from Groq: Things
+2025-09-05 10:47:46,142 - INFO - Received chunk from Groq:  TV
+2025-09-05 10:47:46,143 - INFO - Received chunk from Groq:  with
+2025-09-05 10:47:46,146 - INFO - Received chunk from Groq:  B
+2025-09-05 10:47:46,146 - INFO - Received chunk from Groq: ix
+2025-09-05 10:47:46,148 - INFO - Received chunk from Groq: by
+2025-09-05 10:47:46,148 - INFO - Received chunk from Groq:  Voice
+2025-09-05 10:47:46,155 - INFO - Received chunk from Groq:  Assistant
+2025-09-05 10:47:46,155 - INFO - Received chunk from Groq: 
+
+
+2025-09-05 10:47:46,159 - INFO - Received chunk from Groq: **
+2025-09-05 10:47:46,165 - INFO - Received chunk from Groq: Reviews
+2025-09-05 10:47:46,173 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:46,174 - INFO - Received chunk from Groq:  Ratings
+2025-09-05 10:47:46,174 - INFO - Received chunk from Groq: :
+2025-09-05 10:47:46,175 - INFO - Received chunk from Groq: **
+
+
+2025-09-05 10:47:46,178 - INFO - Received chunk from Groq: The
+2025-09-05 10:47:46,183 - INFO - Received chunk from Groq:  Samsung
+2025-09-05 10:47:46,184 - INFO - Received chunk from Groq:  Q
+2025-09-05 10:47:46,186 - INFO - Received chunk from Groq: N
+2025-09-05 10:47:46,186 - INFO - Received chunk from Groq: 90
+2025-09-05 10:47:46,187 - INFO - Received chunk from Groq: B
+2025-09-05 10:47:46,187 - INFO - Received chunk from Groq:  Neo
+2025-09-05 10:47:46,188 - INFO - Received chunk from Groq:  Q
+2025-09-05 10:47:46,188 - INFO - Received chunk from Groq: LED
+2025-09-05 10:47:46,189 - INFO - Received chunk from Groq:  TV
+2025-09-05 10:47:46,194 - INFO - Received chunk from Groq:  has
+2025-09-05 10:47:46,200 - INFO - Received chunk from Groq:  received
+2025-09-05 10:47:46,200 - INFO - Received chunk from Groq:  mostly
+2025-09-05 10:47:46,202 - INFO - Received chunk from Groq:  positive
+2025-09-05 10:47:46,203 - INFO - Received chunk from Groq:  reviews
+2025-09-05 10:47:46,203 - INFO - Received chunk from Groq:  from
+2025-09-05 10:47:46,204 - INFO - Received chunk from Groq:  critics
+2025-09-05 10:47:46,211 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:46,211 - INFO - Received chunk from Groq:  users
+2025-09-05 10:47:46,211 - INFO - Received chunk from Groq:  alike
+2025-09-05 10:47:46,217 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,232 - INFO - Received chunk from Groq:  with
+2025-09-05 10:47:46,233 - INFO - Received chunk from Groq:  some
+2025-09-05 10:47:46,233 - INFO - Received chunk from Groq:  noting
+2025-09-05 10:47:46,234 - INFO - Received chunk from Groq:  its
+2025-09-05 10:47:46,234 - INFO - Received chunk from Groq:  excellent
+2025-09-05 10:47:46,236 - INFO - Received chunk from Groq:  picture
+2025-09-05 10:47:46,237 - INFO - Received chunk from Groq:  quality
+2025-09-05 10:47:46,238 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,241 - INFO - Received chunk from Groq:  wide
+2025-09-05 10:47:46,245 - INFO - Received chunk from Groq:  color
+2025-09-05 10:47:46,246 - INFO - Received chunk from Groq:  gam
+2025-09-05 10:47:46,248 - INFO - Received chunk from Groq: ut
+2025-09-05 10:47:46,249 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,249 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:46,249 - INFO - Received chunk from Groq:  fast
+2025-09-05 10:47:46,261 - INFO - Received chunk from Groq:  motion
+2025-09-05 10:47:46,262 - INFO - Received chunk from Groq:  rate
+2025-09-05 10:47:46,262 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:46,263 - INFO - Received chunk from Groq:  However
+2025-09-05 10:47:46,266 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,266 - INFO - Received chunk from Groq:  a
+2025-09-05 10:47:46,270 - INFO - Received chunk from Groq:  few
+2025-09-05 10:47:46,270 - INFO - Received chunk from Groq:  reviewers
+2025-09-05 10:47:46,274 - INFO - Received chunk from Groq:  have
+2025-09-05 10:47:46,274 - INFO - Received chunk from Groq:  pointed
+2025-09-05 10:47:46,283 - INFO - Received chunk from Groq:  out
+2025-09-05 10:47:46,284 - INFO - Received chunk from Groq:  that
+2025-09-05 10:47:46,284 - INFO - Received chunk from Groq:  the
+2025-09-05 10:47:46,285 - INFO - Received chunk from Groq:  TV
+2025-09-05 10:47:46,285 - INFO - Received chunk from Groq: 's
+2025-09-05 10:47:46,288 - INFO - Received chunk from Groq:  brightness
+2025-09-05 10:47:46,300 - INFO - Received chunk from Groq:  could
+2025-09-05 10:47:46,301 - INFO - Received chunk from Groq:  be
+2025-09-05 10:47:46,301 - INFO - Received chunk from Groq:  improved
+2025-09-05 10:47:46,302 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,304 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:46,304 - INFO - Received chunk from Groq:  the
+2025-09-05 10:47:46,304 - INFO - Received chunk from Groq:  sound
+2025-09-05 10:47:46,307 - INFO - Received chunk from Groq:  system
+2025-09-05 10:47:46,307 - INFO - Received chunk from Groq:  might
+2025-09-05 10:47:46,316 - INFO - Received chunk from Groq:  not
+2025-09-05 10:47:46,321 - INFO - Received chunk from Groq:  be
+2025-09-05 10:47:46,322 - INFO - Received chunk from Groq:  as
+2025-09-05 10:47:46,322 - INFO - Received chunk from Groq:  immersive
+2025-09-05 10:47:46,326 - INFO - Received chunk from Groq:  as
+2025-09-05 10:47:46,326 - INFO - Received chunk from Groq:  they
+2025-09-05 10:47:46,330 - INFO - Received chunk from Groq:  had
+2025-09-05 10:47:46,335 - INFO - Received chunk from Groq:  hoped
+2025-09-05 10:47:46,336 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:46,336 - INFO - Received chunk from Groq:  On
+2025-09-05 10:47:46,339 - INFO - Received chunk from Groq:  Amazon
+2025-09-05 10:47:46,356 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,358 - INFO - Received chunk from Groq:  the
+2025-09-05 10:47:46,359 - INFO - Received chunk from Groq:  TV
+2025-09-05 10:47:46,360 - INFO - Received chunk from Groq:  has
+2025-09-05 10:47:46,361 - INFO - Received chunk from Groq:  an
+2025-09-05 10:47:46,362 - INFO - Received chunk from Groq:  average
+2025-09-05 10:47:46,363 - INFO - Received chunk from Groq:  rating
+2025-09-05 10:47:46,364 - INFO - Received chunk from Groq:  of
+2025-09-05 10:47:46,365 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:46,366 - INFO - Received chunk from Groq: 4
+2025-09-05 10:47:46,367 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:46,368 - INFO - Received chunk from Groq: 5
+2025-09-05 10:47:46,369 - INFO - Received chunk from Groq:  out
+2025-09-05 10:47:46,371 - INFO - Received chunk from Groq:  of
+2025-09-05 10:47:46,372 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:46,373 - INFO - Received chunk from Groq: 5
+2025-09-05 10:47:46,374 - INFO - Received chunk from Groq:  stars
+2025-09-05 10:47:46,376 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,378 - INFO - Received chunk from Groq:  with
+2025-09-05 10:47:46,388 - INFO - Received chunk from Groq:  many
+2025-09-05 10:47:46,390 - INFO - Received chunk from Groq:  customers
+2025-09-05 10:47:46,394 - INFO - Received chunk from Groq:  praising
+2025-09-05 10:47:46,396 - INFO - Received chunk from Groq:  its
+2025-09-05 10:47:46,401 - INFO - Received chunk from Groq:  picture
+2025-09-05 10:47:46,402 - INFO - Received chunk from Groq:  quality
+2025-09-05 10:47:46,402 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:46,403 - INFO - Received chunk from Groq:  features
+2025-09-05 10:47:46,409 - INFO - Received chunk from Groq: .
+
+
+2025-09-05 10:47:46,412 - INFO - Received chunk from Groq: **
+2025-09-05 10:47:46,413 - INFO - Received chunk from Groq: P
+2025-09-05 10:47:46,418 - INFO - Received chunk from Groq: ricing
+2025-09-05 10:47:46,419 - INFO - Received chunk from Groq: :
+2025-09-05 10:47:46,422 - INFO - Received chunk from Groq: **
+
+
+2025-09-05 10:47:46,423 - INFO - Received chunk from Groq: The
+2025-09-05 10:47:46,424 - INFO - Received chunk from Groq:  Samsung
+2025-09-05 10:47:46,424 - INFO - Received chunk from Groq:  Q
+2025-09-05 10:47:46,425 - INFO - Received chunk from Groq: N
+2025-09-05 10:47:46,426 - INFO - Received chunk from Groq: 90
+2025-09-05 10:47:46,427 - INFO - Received chunk from Groq: B
+2025-09-05 10:47:46,428 - INFO - Received chunk from Groq:  Neo
+2025-09-05 10:47:46,428 - INFO - Received chunk from Groq:  Q
+2025-09-05 10:47:46,429 - INFO - Received chunk from Groq: LED
+2025-09-05 10:47:46,430 - INFO - Received chunk from Groq:  TV
+2025-09-05 10:47:46,431 - INFO - Received chunk from Groq:  is
+2025-09-05 10:47:46,432 - INFO - Received chunk from Groq:  a
+2025-09-05 10:47:46,434 - INFO - Received chunk from Groq:  premium
+2025-09-05 10:47:46,443 - INFO - Received chunk from Groq:  product
+2025-09-05 10:47:46,444 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,444 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:46,447 - INFO - Received chunk from Groq:  its
+2025-09-05 10:47:46,453 - INFO - Received chunk from Groq:  pricing
+2025-09-05 10:47:46,453 - INFO - Received chunk from Groq:  reflects
+2025-09-05 10:47:46,457 - INFO - Received chunk from Groq:  that
+2025-09-05 10:47:46,457 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:46,458 - INFO - Received chunk from Groq:  The
+2025-09-05 10:47:46,458 - INFO - Received chunk from Groq:  TV
+2025-09-05 10:47:46,462 - INFO - Received chunk from Groq: 's
+2025-09-05 10:47:46,466 - INFO - Received chunk from Groq:  price
+2025-09-05 10:47:46,466 - INFO - Received chunk from Groq:  varies
+2025-09-05 10:47:46,478 - INFO - Received chunk from Groq:  depending
+2025-09-05 10:47:46,478 - INFO - Received chunk from Groq:  on
+2025-09-05 10:47:46,479 - INFO - Received chunk from Groq:  the
+2025-09-05 10:47:46,479 - INFO - Received chunk from Groq:  region
+2025-09-05 10:47:46,480 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,483 - INFO - Received chunk from Groq:  size
+2025-09-05 10:47:46,487 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,487 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:46,488 - INFO - Received chunk from Groq:  retailer
+2025-09-05 10:47:46,496 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,503 - INFO - Received chunk from Groq:  but
+2025-09-05 10:47:46,503 - INFO - Received chunk from Groq:  here
+2025-09-05 10:47:46,512 - INFO - Received chunk from Groq:  are
+2025-09-05 10:47:46,513 - INFO - Received chunk from Groq:  some
+2025-09-05 10:47:46,513 - INFO - Received chunk from Groq:  general
+2025-09-05 10:47:46,514 - INFO - Received chunk from Groq:  price
+2025-09-05 10:47:46,524 - INFO - Received chunk from Groq:  ranges
+2025-09-05 10:47:46,525 - INFO - Received chunk from Groq: :
+
+
+2025-09-05 10:47:46,526 - INFO - Received chunk from Groq: *
+2025-09-05 10:47:46,526 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:46,526 - INFO - Received chunk from Groq: 50
+2025-09-05 10:47:46,527 - INFO - Received chunk from Groq: -inch
+2025-09-05 10:47:46,527 - INFO - Received chunk from Groq: :
+2025-09-05 10:47:46,527 - INFO - Received chunk from Groq:  around
+2025-09-05 10:47:46,528 - INFO - Received chunk from Groq:  $
+2025-09-05 10:47:46,528 - INFO - Received chunk from Groq: 1
+2025-09-05 10:47:46,528 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,529 - INFO - Received chunk from Groq: 800
+2025-09-05 10:47:46,537 - INFO - Received chunk from Groq: -$
+2025-09-05 10:47:46,537 - INFO - Received chunk from Groq: 2
+2025-09-05 10:47:46,538 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,538 - INFO - Received chunk from Groq: 200
+2025-09-05 10:47:46,538 - INFO - Received chunk from Groq: 
+
+2025-09-05 10:47:46,539 - INFO - Received chunk from Groq: *
+2025-09-05 10:47:46,539 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:46,539 - INFO - Received chunk from Groq: 55
+2025-09-05 10:47:46,542 - INFO - Received chunk from Groq: -inch
+2025-09-05 10:47:46,543 - INFO - Received chunk from Groq: :
+2025-09-05 10:47:46,543 - INFO - Received chunk from Groq:  around
+2025-09-05 10:47:46,544 - INFO - Received chunk from Groq:  $
+2025-09-05 10:47:46,544 - INFO - Received chunk from Groq: 2
+2025-09-05 10:47:46,545 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,545 - INFO - Received chunk from Groq: 200
+2025-09-05 10:47:46,551 - INFO - Received chunk from Groq: -$
+2025-09-05 10:47:46,552 - INFO - Received chunk from Groq: 2
+2025-09-05 10:47:46,552 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,552 - INFO - Received chunk from Groq: 800
+2025-09-05 10:47:46,553 - INFO - Received chunk from Groq: 
+
+2025-09-05 10:47:46,554 - INFO - Received chunk from Groq: *
+2025-09-05 10:47:46,555 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:46,555 - INFO - Received chunk from Groq: 65
+2025-09-05 10:47:46,556 - INFO - Received chunk from Groq: -inch
+2025-09-05 10:47:46,556 - INFO - Received chunk from Groq: :
+2025-09-05 10:47:46,557 - INFO - Received chunk from Groq:  around
+2025-09-05 10:47:46,557 - INFO - Received chunk from Groq:  $
+2025-09-05 10:47:46,561 - INFO - Received chunk from Groq: 2
+2025-09-05 10:47:46,561 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,562 - INFO - Received chunk from Groq: 800
+2025-09-05 10:47:46,562 - INFO - Received chunk from Groq: -$
+2025-09-05 10:47:46,563 - INFO - Received chunk from Groq: 3
+2025-09-05 10:47:46,563 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,564 - INFO - Received chunk from Groq: 500
+2025-09-05 10:47:46,570 - INFO - Received chunk from Groq: 
+
+2025-09-05 10:47:46,570 - INFO - Received chunk from Groq: *
+2025-09-05 10:47:46,571 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:46,571 - INFO - Received chunk from Groq: 75
+2025-09-05 10:47:46,571 - INFO - Received chunk from Groq: -inch
+2025-09-05 10:47:46,572 - INFO - Received chunk from Groq: :
+2025-09-05 10:47:46,574 - INFO - Received chunk from Groq:  around
+2025-09-05 10:47:46,574 - INFO - Received chunk from Groq:  $
+2025-09-05 10:47:46,575 - INFO - Received chunk from Groq: 4
+2025-09-05 10:47:46,580 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,581 - INFO - Received chunk from Groq: 000
+2025-09-05 10:47:46,581 - INFO - Received chunk from Groq: -$
+2025-09-05 10:47:46,582 - INFO - Received chunk from Groq: 5
+2025-09-05 10:47:46,582 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,582 - INFO - Received chunk from Groq: 000
+2025-09-05 10:47:46,583 - INFO - Received chunk from Groq: 
+
+2025-09-05 10:47:46,583 - INFO - Received chunk from Groq: *
+2025-09-05 10:47:46,586 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:46,586 - INFO - Received chunk from Groq: 85
+2025-09-05 10:47:46,587 - INFO - Received chunk from Groq: -inch
+2025-09-05 10:47:46,587 - INFO - Received chunk from Groq: :
+2025-09-05 10:47:46,588 - INFO - Received chunk from Groq:  around
+2025-09-05 10:47:46,588 - INFO - Received chunk from Groq:  $
+2025-09-05 10:47:46,589 - INFO - Received chunk from Groq: 6
+2025-09-05 10:47:46,591 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,592 - INFO - Received chunk from Groq: 000
+2025-09-05 10:47:46,592 - INFO - Received chunk from Groq: -$
+2025-09-05 10:47:46,593 - INFO - Received chunk from Groq: 7
+2025-09-05 10:47:46,593 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,594 - INFO - Received chunk from Groq: 000
+2025-09-05 10:47:46,594 - INFO - Received chunk from Groq: 
+
+2025-09-05 10:47:46,595 - INFO - Received chunk from Groq: *
+2025-09-05 10:47:46,601 - INFO - Received chunk from Groq:  
+2025-09-05 10:47:46,601 - INFO - Received chunk from Groq: 95
+2025-09-05 10:47:46,602 - INFO - Received chunk from Groq: -inch
+2025-09-05 10:47:46,602 - INFO - Received chunk from Groq: :
+2025-09-05 10:47:46,602 - INFO - Received chunk from Groq:  around
+2025-09-05 10:47:46,603 - INFO - Received chunk from Groq:  $
+2025-09-05 10:47:46,603 - INFO - Received chunk from Groq: 8
+2025-09-05 10:47:46,604 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,606 - INFO - Received chunk from Groq: 000
+2025-09-05 10:47:46,607 - INFO - Received chunk from Groq: -$
+2025-09-05 10:47:46,607 - INFO - Received chunk from Groq: 9
+2025-09-05 10:47:46,608 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,608 - INFO - Received chunk from Groq: 000
+2025-09-05 10:47:46,608 - INFO - Received chunk from Groq: 
+
+
+2025-09-05 10:47:46,610 - INFO - Received chunk from Groq: Overall
+2025-09-05 10:47:46,612 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,613 - INFO - Received chunk from Groq:  the
+2025-09-05 10:47:46,615 - INFO - Received chunk from Groq:  Samsung
+2025-09-05 10:47:46,615 - INFO - Received chunk from Groq:  Q
+2025-09-05 10:47:46,616 - INFO - Received chunk from Groq: N
+2025-09-05 10:47:46,616 - INFO - Received chunk from Groq: 90
+2025-09-05 10:47:46,616 - INFO - Received chunk from Groq: B
+2025-09-05 10:47:46,617 - INFO - Received chunk from Groq:  Neo
+2025-09-05 10:47:46,619 - INFO - Received chunk from Groq:  Q
+2025-09-05 10:47:46,619 - INFO - Received chunk from Groq: LED
+2025-09-05 10:47:46,619 - INFO - Received chunk from Groq:  TV
+2025-09-05 10:47:46,620 - INFO - Received chunk from Groq:  is
+2025-09-05 10:47:46,621 - INFO - Received chunk from Groq:  a
+2025-09-05 10:47:46,621 - INFO - Received chunk from Groq:  high
+2025-09-05 10:47:46,622 - INFO - Received chunk from Groq: -end
+2025-09-05 10:47:46,622 - INFO - Received chunk from Groq:  television
+2025-09-05 10:47:46,625 - INFO - Received chunk from Groq:  that
+2025-09-05 10:47:46,632 - INFO - Received chunk from Groq:  offers
+2025-09-05 10:47:46,632 - INFO - Received chunk from Groq:  excellent
+2025-09-05 10:47:46,633 - INFO - Received chunk from Groq:  picture
+2025-09-05 10:47:46,633 - INFO - Received chunk from Groq:  quality
+2025-09-05 10:47:46,634 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,634 - INFO - Received chunk from Groq:  immersive
+2025-09-05 10:47:46,638 - INFO - Received chunk from Groq:  features
+2025-09-05 10:47:46,643 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,643 - INFO - Received chunk from Groq:  and
+2025-09-05 10:47:46,644 - INFO - Received chunk from Groq:  a
+2025-09-05 10:47:46,644 - INFO - Received chunk from Groq:  sleek
+2025-09-05 10:47:46,656 - INFO - Received chunk from Groq:  design
+2025-09-05 10:47:46,656 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:46,657 - INFO - Received chunk from Groq:  While
+2025-09-05 10:47:46,657 - INFO - Received chunk from Groq:  its
+2025-09-05 10:47:46,658 - INFO - Received chunk from Groq:  price
+2025-09-05 10:47:46,658 - INFO - Received chunk from Groq:  might
+2025-09-05 10:47:46,662 - INFO - Received chunk from Groq:  be
+2025-09-05 10:47:46,662 - INFO - Received chunk from Groq:  steep
+2025-09-05 10:47:46,671 - INFO - Received chunk from Groq:  for
+2025-09-05 10:47:46,672 - INFO - Received chunk from Groq:  some
+2025-09-05 10:47:46,672 - INFO - Received chunk from Groq: ,
+2025-09-05 10:47:46,673 - INFO - Received chunk from Groq:  it
+2025-09-05 10:47:46,673 - INFO - Received chunk from Groq: 's
+2025-09-05 10:47:46,674 - INFO - Received chunk from Groq:  definitely
+2025-09-05 10:47:46,681 - INFO - Received chunk from Groq:  worth
+2025-09-05 10:47:46,681 - INFO - Received chunk from Groq:  considering
+2025-09-05 10:47:46,682 - INFO - Received chunk from Groq:  for
+2025-09-05 10:47:46,682 - INFO - Received chunk from Groq:  those
+2025-09-05 10:47:46,683 - INFO - Received chunk from Groq:  who
+2025-09-05 10:47:46,683 - INFO - Received chunk from Groq:  want
+2025-09-05 10:47:46,683 - INFO - Received chunk from Groq:  a
+2025-09-05 10:47:46,684 - INFO - Received chunk from Groq:  premium
+2025-09-05 10:47:46,684 - INFO - Received chunk from Groq:  viewing
+2025-09-05 10:47:46,684 - INFO - Received chunk from Groq:  experience
+2025-09-05 10:47:46,684 - INFO - Received chunk from Groq: .
+2025-09-05 10:47:46,685 - INFO - Received chunk from Groq: 
+2025-09-05 11:22:28,553 - INFO - Fetched 6 products from Shopify

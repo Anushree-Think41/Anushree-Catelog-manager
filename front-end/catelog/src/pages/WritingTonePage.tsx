@@ -7,6 +7,7 @@ const WritingTonePage: React.FC = () => {
   const navigate = useNavigate();
   const [selectedWritingTone, setSelectedWritingTone] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isDelaying, setIsDelaying] = useState(false);
   const setWritingTone = useSetupStore((state) => state.setWritingTone);
   const getAllSelections = useSetupStore((state) => state.getAllSelections);
 
@@ -41,7 +42,11 @@ const WritingTonePage: React.FC = () => {
 
       if (response.ok) {
         console.log('Optimization started successfully!', await response.json());
-        navigate('/optimization-success'); // Navigate to success page
+        setIsDelaying(true); // Start the delay
+        setTimeout(() => {
+          setIsDelaying(false);
+          navigate('/optimization-success'); // Redirect after delay
+        }, 30000); // 30 seconds
       } else {
         console.error('Failed to start optimization:', response.status, await response.text());
         // Optionally show an error message to the user
@@ -115,7 +120,7 @@ const WritingTonePage: React.FC = () => {
           </div>
         </div>
 
-        {isLoading && (
+        {(isLoading || isDelaying) && (
           <div className="text-center mt-8">
             <p className="text-lg font-semibold text-blue-600 mb-4">Optimizing your products...</p>
             <Line percent={50} strokeWidth={4} strokeColor="#4299e1" className="w-full" />
@@ -127,7 +132,7 @@ const WritingTonePage: React.FC = () => {
             <span className="mr-2">←</span> Previous
           </button>
           <span className="text-gray-500">Step 4 of 4</span>
-          <button onClick={handleStartOptimization} disabled={!selectedWritingTone || isLoading} className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 flex items-center">
+          <button onClick={handleStartOptimization} disabled={!selectedWritingTone || isLoading || isDelaying} className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 flex items-center">
             Start Optimization <span className="ml-2">→</span>
           </button>
         </div>

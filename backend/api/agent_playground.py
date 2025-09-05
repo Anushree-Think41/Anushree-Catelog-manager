@@ -5,6 +5,7 @@ import json
 import uuid
 import asyncio
 import traceback
+import os # Import os
 
 from catalog_agent.agent import root_agent
 from google.adk.runners import Runner
@@ -73,3 +74,10 @@ async def run_agent_query(agent_query_data: AgentQuery):
             detail=f"Failed to execute agent query: {str(e)}\nFull Traceback: {traceback.format_exc()}",
         )
 
+@router.get("/check-groq-key")
+async def check_groq_key():
+    groq_api_key = os.environ.get("GROQ_API_KEY")
+    if groq_api_key:
+        return {"GROQ_API_KEY_SET": True, "key_prefix": groq_api_key[:5] + "..."}
+    else:
+        return {"GROQ_API_KEY_SET": False, "message": "GROQ_API_KEY is not set in environment variables."}

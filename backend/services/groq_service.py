@@ -1,6 +1,7 @@
 import os
 import json
 from groq import Groq
+from backend.utils.logger import logger # Import logger
 
 class GroqService:
     def __init__(self):
@@ -27,7 +28,7 @@ class GroqService:
                     "content": prompt_content,
                 }
             ],
-            model="llama-3.1-8b-instant",
+            model="llama-3.3-70b-versatile",
             temperature=0.7,
             max_tokens=500, # Increased max_tokens to allow for more detailed JSON output
             response_format={"type": "json_object"} # Request JSON object output
@@ -79,7 +80,7 @@ class GroqService:
                     "content": prompt_content,
                 }
             ],
-            model="llama-3.1-8b-instant",
+            model="llama-3.3-70b-versatile",
             temperature=0.7,
             max_tokens=1000, # Increased max_tokens to allow for more detailed JSON output
             response_format={"type": "json_object"} # Request JSON object output
@@ -93,3 +94,15 @@ class GroqService:
         except json.JSONDecodeError:
             # If the model doesn't return valid JSON, return a fallback structure
             return {"raw_groq_output": raw_response, "error": "Groq did not return valid JSON."}
+
+    def stream_chat_response(self, messages: list[dict[str, str]]):
+        logger.info(f"Sending messages to Groq: {messages}")
+        chat_completion = self.client.chat.completions.create(
+            messages=messages,
+            model="llama-3.1-8b-instant",
+            stream=True,
+        )
+        for chunk in chat_completion:
+            content = chunk.choices[0].delta.content or ""
+            logger.info(f"Received chunk from Groq: {content}")
+            yield content

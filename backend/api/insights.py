@@ -167,6 +167,11 @@ async def get_product_comparison(
             original_description=original_product.description,
             optimized_description=optimized_product.description
         )
+        if "error" in comparison_insights:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Groq service failed to generate comparison: {comparison_insights['error']}"
+            )
         print(f"Comparison insights generated successfully for optimized_product_id={optimized_product_id}")
         return {"optimized_product_id": optimized_product_id, "comparison": comparison_insights}
     except Exception as e:
@@ -191,6 +196,7 @@ async def get_product_details(
 
     return {
         "original_product": {
+            "id": original_product.id,
             "title": original_product.title,
             "description": original_product.description,
             "price": original_product.price,
@@ -198,6 +204,7 @@ async def get_product_details(
             "tags": original_product.tags,
         },
         "optimized_product": {
+            "id": optimized_product.id,
             "title": optimized_product.title,
             "description": optimized_product.description,
             "price": optimized_product.price,
@@ -207,11 +214,17 @@ async def get_product_details(
     }
 
 @router.get("/overall-product-comparison-summary")
-async def get_overall_product_comparison_summary(db: Session = Depends(get_db)):
+async def get_overall_product_comparison_summary(db: Session = Depends(get_db), optimized_product_ids: str | None = None):
     """
     Calculates the average overall comparison scores for all optimized products.
+    Optionally filters by a comma-separated list of optimized product IDs.
     """
-    optimized_products = db.query(OptimizedProductModel).all()
+    query = db.query(OptimizedProductModel)
+    if optimized_product_ids:
+        ids = [int(id) for id in optimized_product_ids.split(',')]
+        query = query.filter(OptimizedProductModel.id.in_(ids))
+
+    optimized_products = query.all()
     
     total_original_overall_score = 0
     total_optimized_overall_score = 0
@@ -231,6 +244,10 @@ async def get_overall_product_comparison_summary(db: Session = Depends(get_db)):
                     original_description=original_product.description,
                     optimized_description=optimized_product.description
                 )
+                if "error" in comparison_insights:
+                    print(f"Error comparing product {optimized_product.id}: {comparison_insights['error']}")
+                    continue # Skip this product and continue with the next
+                
                 overall_score = comparison_insights.get("overall_score")
                 if overall_score:
                     total_original_overall_score += overall_score.get("original", 0)
