@@ -46,7 +46,7 @@ const WritingTonePage: React.FC = () => {
         setTimeout(() => {
           setIsDelaying(false);
           navigate('/optimization-success'); // Redirect after delay
-        }, 30000); // 30 seconds
+        }, 15000); // 30 seconds
       } else {
         console.error('Failed to start optimization:', response.status, await response.text());
         // Optionally show an error message to the user

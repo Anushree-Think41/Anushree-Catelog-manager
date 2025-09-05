@@ -374,10 +374,7 @@ const ProductCatalogPage: React.FC = () => {
                       className="text-purple-600 hover:text-purple-900 flex items-center justify-end"
                     >
                       {/* Refresh Icon */}
-                      <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004 12c0 2.114.816 4.021 2.176 5.451m-.006-.451H4v5m2.176-5.451A8.001 8.001 0 0120 12c0-2.114-.816-4.021-2.176-5.451"></path>
-                      </svg>
-                      Re-optimize
+                      
                     </button>
                   </td>
                 </tr>

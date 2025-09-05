@@ -4,6 +4,7 @@ from backend.services.shopify_service import ShopifyService
 from catalog_agent.product_optimizer_agent import optimize_product as run_optimization
 from google.adk.tools.function_tool import FunctionTool
 import asyncio
+from backend.services.product_service import create_optimized_product
 
 # Initialize services
 shopify_service = ShopifyService()
@@ -71,11 +72,35 @@ class ProductTools:
         Returns:
             A dictionary containing the optimized product data, or an error message.
         """
+        db = next(get_db()) # Get DB session
         try:
             optimized_data = await run_optimization(product_data, category, seo_focus, writing_tone)
-            return optimized_data
+            print(optimized_data)
+            if "error" not in optimized_data:
+                # Assuming product_data contains 'id' for the original product
+                original_product_id = product_data.get("id") 
+                if original_product_id:
+                    print(f"Original product ID: {original_product_id}")
+                    original_product = product_service.get_product_by_id(db, original_product_id)
+                    if original_product:
+                        print(f"Original product found: {original_product.title}")
+                        print(f"Optimized data before saving: {optimized_data}")
+                        # Save the optimized product to the database
+                        # NOTE: This is redundant as the API endpoint already handles saving.
+                        # This is added due to explicit user request.
+                        create_optimized_product(db, original_product, optimized_data)
+                        print(f"Re-optimized data saved to DB: {optimized_data}") # Print the re-optimized data
+                        return {"status": "success", "optimized_data": optimized_data, "message": "Product optimized and saved to DB."} 
+                    else:
+                        return {"error": f"Original product with ID {original_product_id} not found for saving optimized data."} 
+                else:
+                    return {"error": "Original product ID not provided in product_data for saving optimized data."} 
+            else:
+                return optimized_data # Return the error from optimization
         except Exception as e:
             return {"error": f"Failed to optimize product: {e}"}
+        finally:
+            db.close()
 
     async def update_product_on_shopify(self, optimized_product_id: int) -> dict:
         """
