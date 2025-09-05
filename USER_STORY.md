@@ -32,3 +32,55 @@
 ### 5. Agent-Based Interaction (Underlying Infrastructure)
 
 *   The system leverages an AI agent (`root_agent`, `product_optimizer_agent`) to perform complex tasks like optimization and insight generation.
+
+
+
+ ┌─────────────────────┐
+ │    Shopify Store    │
+ │ (Products, Updates) │
+ └─────────┬───────────┘
+           │  API Sync (Import/Update)
+           ▼
+ ┌─────────────────────┐
+ │   FastAPI Backend   │
+ │  (Python, Agents)   │
+ ├─────────────────────┤
+ │ - Shopify API Calls │
+ │ - DB Operations     │
+ │ - Agent Orches      |
+ └─────────┬───────────┘
+           │
+           │   (CRUD + Optimizations)
+           ▼
+ ┌─────────────────────┐
+ │   PostgreSQL DB     │
+ │ (Products,  │
+ │  Optimizations)     │
+ └─────────┬───────────┘
+           │
+           │   Request/Response
+           ▼
+ ┌──────────────────────────┐
+ │        AI Agents         │
+ │ 
+ ├──────────────────────────┤
+ │ - Optimize Titles/Descs  │
+ │ - Generate SEO Tags      │
+ │ - Provide Insights       │
+ │ - Score Content (0–100)  │
+ │ - Side-by-Side Reports   │
+ └─────────┬───────────────┘
+           │
+           │  JSON Output
+           ▼
+ ┌─────────────────────┐
+ │     React Frontend  │
+ │  (Catalog Manager)  │
+ ├─────────────────────┤
+ │ - get personalized input
+ | - Product List View │
+ │ - Comparison UI     │
+ │ - Insights Display  │
+ │ - Bulk Optimization │
+ │ - Push to Shopify   │
+ └─────────────────────┘

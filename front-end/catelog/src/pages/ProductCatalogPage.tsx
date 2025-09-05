@@ -119,7 +119,7 @@ const ProductCatalogPage: React.FC = () => {
     try {
       // Assuming your backend is running on http://localhost:8000
       const response = await axios.post(
-        "http://localhost:8000/products/shopify/send-multiple",
+        "http://localhost:8000/optimize/products/shopify/send-multiple",
         { product_ids: selectedProductIds }
       );
       console.log("Update response:", response.data);
