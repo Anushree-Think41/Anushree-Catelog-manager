@@ -1,5 +1,4 @@
 ## User Story
-
 **As an E-commerce Manager, I want to efficiently manage and optimize my product listings to improve SEO, increase conversion rates, and streamline my workflow, so that I can maximize sales and minimize manual effort.**
 
 ## Core Functionalities
